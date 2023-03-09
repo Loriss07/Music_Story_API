@@ -16,6 +16,7 @@ namespace MusicStory
     {
         static RestClient http;
         private string URL { get; set; }
+        private root Response;
         public HTTPClient()
         {
             URL = "";
@@ -33,17 +34,20 @@ namespace MusicStory
             http.Authenticator = OAuth1Authenticator.ForAccessToken(consumerKey, consumerSecret, accessToken, 
                             tokenSecret, OAuthSignatureMethod.HmacSha1);
         }
+        
         public async Task<object> GetArtist(string artistName)
         {
+            
             string subURL = "/artist/search?name=" + artistName;
             var Deserializer = new DotNetXmlDeserializer();
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
             RestRequest request = new RestRequest(subURL, Method.Get);
             RestResponse response = await http.GetAsync(request);
-            root result;
+            
             try
             {
-                result = Deserializer.Deserialize<root>(response);
+                root result = Deserializer.Deserialize<root>(response);
+                Response = result;
                 return result;
             }
             catch (Exception ex)
@@ -52,7 +56,41 @@ namespace MusicStory
                 return a;
             }
 
-          
+         
+        }
+        public async Task<object> NextPage(string artistName)
+        {
+            string subURL = "/artist/search?name=" + artistName + "&page=" + Convert.ToString(Response.currentPage + 1);
+            if (Response != null && Response.currentPage <= Response.pageCount)
+                Response = await GetResponse(subURL);
+
+            return Response;
+                
+        }
+        public async Task<object> PreviousPage()
+        {
+            return new object();
+        }
+        private async Task<root> GetResponse(string subURL)
+        {
+            var Deserializer = new DotNetXmlDeserializer();
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            RestRequest request = new RestRequest(subURL, Method.Get);
+            RestResponse response = await http.GetAsync(request);
+            root result;
+            try
+            {
+                result = Deserializer.Deserialize<root>(response);
+                Response = result;
+                return result;
+            }
+            catch (Exception ex)
+            {
+                result = null;
+                
+            }
+
+            return result;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace MusicStory
         }
     }
 
-    [System.SerializableAttribute()]
+    [SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     public partial class rootItem
