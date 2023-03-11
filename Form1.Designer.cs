@@ -34,6 +34,7 @@
             this.Bar = new System.Windows.Forms.Panel();
             this.Switch = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Results = new System.Windows.Forms.FlowLayoutPanel();
             this.Next = new MusicStory.RJButton();
             this.Previous = new MusicStory.RJButton();
             this.Search = new MusicStory.RJButton();
@@ -46,16 +47,16 @@
             // 
             this.SearchBar.Font = new System.Drawing.Font("Bahnschrift", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SearchBar.ForeColor = System.Drawing.Color.LightSteelBlue;
-            this.SearchBar.Location = new System.Drawing.Point(145, 18);
+            this.SearchBar.Location = new System.Drawing.Point(169, 22);
             this.SearchBar.Name = "SearchBar";
-            this.SearchBar.Size = new System.Drawing.Size(411, 40);
+            this.SearchBar.Size = new System.Drawing.Size(507, 40);
             this.SearchBar.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 27);
+            this.label1.Location = new System.Drawing.Point(12, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(130, 24);
             this.label1.TabIndex = 2;
@@ -78,7 +79,7 @@
             this.Bar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Bar.Location = new System.Drawing.Point(0, 0);
             this.Bar.Name = "Bar";
-            this.Bar.Size = new System.Drawing.Size(703, 88);
+            this.Bar.Size = new System.Drawing.Size(871, 88);
             this.Bar.TabIndex = 4;
             // 
             // Switch
@@ -86,7 +87,7 @@
             this.Switch.Controls.Add(this.Next);
             this.Switch.Controls.Add(this.Previous);
             this.Switch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Switch.Location = new System.Drawing.Point(583, 0);
+            this.Switch.Location = new System.Drawing.Point(751, 0);
             this.Switch.Name = "Switch";
             this.Switch.Size = new System.Drawing.Size(120, 51);
             this.Switch.TabIndex = 5;
@@ -95,10 +96,21 @@
             // 
             this.panel1.Controls.Add(this.Switch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 399);
+            this.panel1.Location = new System.Drawing.Point(0, 470);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(703, 51);
+            this.panel1.Size = new System.Drawing.Size(871, 51);
             this.panel1.TabIndex = 6;
+            // 
+            // Results
+            // 
+            this.Results.AutoScroll = true;
+            this.Results.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Results.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.Results.Location = new System.Drawing.Point(0, 88);
+            this.Results.Name = "Results";
+            this.Results.Padding = new System.Windows.Forms.Padding(5);
+            this.Results.Size = new System.Drawing.Size(871, 382);
+            this.Results.TabIndex = 7;
             // 
             // Next
             // 
@@ -149,7 +161,7 @@
             this.Search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Search.Font = new System.Drawing.Font("Bahnschrift SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Search.ForeColor = System.Drawing.Color.White;
-            this.Search.Location = new System.Drawing.Point(570, 18);
+            this.Search.Location = new System.Drawing.Point(727, 25);
             this.Search.Margin = new System.Windows.Forms.Padding(0);
             this.Search.Name = "Search";
             this.Search.Size = new System.Drawing.Size(121, 41);
@@ -161,15 +173,16 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 450);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(871, 521);
+            this.Controls.Add(this.Results);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.Bar);
             this.Controls.Add(this.Warn);
             this.Font = new System.Drawing.Font("Bahnschrift Light", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MusicStory";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Bar.ResumeLayout(false);
             this.Bar.PerformLayout();
             this.Switch.ResumeLayout(false);
@@ -190,6 +203,7 @@
         private RJButton Next;
         private RJButton Previous;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel Results;
     }
 }
 

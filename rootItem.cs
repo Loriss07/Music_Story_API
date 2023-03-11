@@ -36,6 +36,7 @@ namespace MusicStory
 
         private uint idField;
         private string nameField;
+        private int width;
         private object ipiField;
         private string typeField;
         private string urlField;
@@ -45,19 +46,172 @@ namespace MusicStory
         private string update_dateField;
         private string creation_dateField;
         private rootItemSearch_scores search_scoresField;
+        private uint id_sourceField;
+        private string sourceField;
+        private ushort widthField;
+        private ushort heightField;
+        private string url_400Field;
+        private object mime_typeField;
+        private object copyrightField;
+        private object licenceField;
+        private byte mainField;
 
-        /// <remarks/>
-        public uint id
-        {
-            get
+            /// <remarks/>
+            public uint id
             {
-                return this.idField;
+                get
+                {
+                    return this.idField;
+                }
+                set
+                {
+                    this.idField = value;
+                }
             }
-            set
+
+            /// <remarks/>
+            public uint id_source
             {
-                this.idField = value;
+                get
+                {
+                    return this.id_sourceField;
+                }
+                set
+                {
+                    this.id_sourceField = value;
+                }
             }
-        }
+
+            /// <remarks/>
+            public string source
+            {
+                get
+                {
+                    return this.sourceField;
+                }
+                set
+                {
+                    this.sourceField = value;
+                }
+            }
+
+
+            /// <remarks/>
+            public ushort height
+            {
+                get
+                {
+                    return this.heightField;
+                }
+                set
+                {
+                    this.heightField = value;
+                }
+            }
+
+            /// <remarks/>
+            public string url
+            {
+                get
+                {
+                    return this.urlField;
+                }
+                set
+                {
+                    this.urlField = value;
+                }
+            }
+
+            /// <remarks/>
+            public string url_400
+            {
+                get
+                {
+                    return this.url_400Field;
+                }
+                set
+                {
+                    this.url_400Field = value;
+                }
+            }
+
+            /// <remarks/>
+            public object mime_type
+            {
+                get
+                {
+                    return this.mime_typeField;
+                }
+                set
+                {
+                    this.mime_typeField = value;
+                }
+            }
+
+            /// <remarks/>
+            public object copyright
+            {
+                get
+                {
+                    return this.copyrightField;
+                }
+                set
+                {
+                    this.copyrightField = value;
+                }
+            }
+
+            /// <remarks/>
+            public object licence
+            {
+                get
+                {
+                    return this.licenceField;
+                }
+                set
+                {
+                    this.licenceField = value;
+                }
+            }
+
+            /// <remarks/>
+            public string update_date
+            {
+                get
+                {
+                    return this.update_dateField;
+                }
+                set
+                {
+                    this.update_dateField = value;
+                }
+            }
+
+            /// <remarks/>
+            public string creation_date
+            {
+                get
+                {
+                    return this.creation_dateField;
+                }
+                set
+                {
+                    this.creation_dateField = value;
+                }
+            }
+
+            /// <remarks/>
+            public byte main
+            {
+                get
+                {
+                    return this.mainField;
+                }
+                set
+                {
+                    this.mainField = value;
+                }
+            }
 
         /// <remarks/>
         public string name
@@ -98,18 +252,6 @@ namespace MusicStory
             }
         }
 
-        /// <remarks/>
-        public string url
-        {
-            get
-            {
-                return this.urlField;
-            }
-            set
-            {
-                this.urlField = value;
-            }
-        }
 
         /// <remarks/>
         public string firstname
@@ -150,31 +292,7 @@ namespace MusicStory
             }
         }
 
-        /// <remarks/>
-        public string update_date
-        {
-            get
-            {
-                return this.update_dateField;
-            }
-            set
-            {
-                this.update_dateField = value;
-            }
-        }
 
-        /// <remarks/>
-        public string creation_date
-        {
-            get
-            {
-                return this.creation_dateField;
-            }
-            set
-            {
-                this.creation_dateField = value;
-            }
-        }
 
         /// <remarks/>
         public rootItemSearch_scores search_scores
@@ -188,5 +306,13 @@ namespace MusicStory
                 this.search_scoresField = value;
             }
         }
+
+        public int Width { get => width; set => width = value; }
+        public ushort WidthField { get => widthField; set => widthField = value; }
     }
+
+
+
+    /// <remarks/>
+
 }

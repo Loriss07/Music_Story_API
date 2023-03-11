@@ -12,10 +12,24 @@ namespace MusicStory
 {
     public partial class Carta : UserControl
     {
+        private uint artistID;
+        private string nome;
         public Carta()
         {
             InitializeComponent();
+            Picture.Image = Properties.Resources.music_player;
         }
 
+        public uint ArtistID { get => artistID; set => artistID = value; }
+        public string Nome { get => nome; set {
+                nome = value;
+                ArtistName.Text = nome;
+            }  
+        }
+
+        private void Info_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

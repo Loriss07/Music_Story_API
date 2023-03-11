@@ -97,5 +97,6 @@ namespace MusicStory
                 this.Region = new Region(rect);
             }
         }
+       
     }
 }
