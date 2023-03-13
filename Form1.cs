@@ -147,7 +147,7 @@ namespace MusicStory
 
                 if (img == 1)
                     carta.Picture.Image = new Bitmap($"./img/img{i}.png");
-
+             
                 Results.Controls.Add(carta);
 
             }
