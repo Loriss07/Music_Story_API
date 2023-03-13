@@ -86,6 +86,12 @@
     <Compile Include="ArtistCard.Designer.cs">
       <DependentUpon>ArtistCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ArtistInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArtistInfo.Designer.cs">
+      <DependentUpon>ArtistInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CircleAvatar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ArtistCard.resx">
       <DependentUpon>ArtistCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ArtistInfo.resx">
+      <DependentUpon>ArtistInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -153,6 +162,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\icon\music-player.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icon\instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icon\social.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\icon\twitter.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

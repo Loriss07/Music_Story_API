@@ -33,7 +33,7 @@ namespace MusicStory
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     public partial class rootItem
     {
-
+        // Contiene tutte le proprietà che le risposte XML possono contenere
         private uint idField;
         private string nameField;
         private int width;
@@ -45,7 +45,6 @@ namespace MusicStory
         private byte coeff_actuField;
         private string update_dateField;
         private string creation_dateField;
-        private rootItemSearch_scores search_scoresField;
         private uint id_sourceField;
         private string sourceField;
         private ushort widthField;
@@ -55,9 +54,17 @@ namespace MusicStory
         private object copyrightField;
         private object licenceField;
         private byte mainField;
+        private rootItemSearch_scores search_scoresField;
+        private string titleField;
+        private string labelField;
+        private object distributorField;
+        private string formatField;
+        private DateTime release_dateField;
+        private string linkField;
 
-            /// <remarks/>
-            public uint id
+
+        /// <remarks/>
+        public uint id
             {
                 get
                 {
@@ -309,7 +316,15 @@ namespace MusicStory
 
         public int Width { get => width; set => width = value; }
         public ushort WidthField { get => widthField; set => widthField = value; }
+        public string TitleField { get => titleField; set => titleField = value; }
+        public string LabelField { get => labelField; set => labelField = value; }
+        public object DistributorField { get => distributorField; set => distributorField = value; }
+        public string FormatField { get => formatField; set => formatField = value; }
+        public DateTime Release_dateField { get => release_dateField; set => release_dateField = value; }
+        public string LinkField { get => linkField; set => linkField = value; }
     }
+
+
 
 
 

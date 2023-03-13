@@ -17,10 +17,10 @@ namespace MusicStory
     {
 
         private decimal versionField;
-        private byte codeField;
-        private byte countField;
-        private byte pageCountField;
-        private byte currentPageField;
+        private uint codeField;
+        private uint countField;
+        private uint pageCountField;
+        private uint currentPageField;
         private rootItem[] dataField;
 
         /// <remarks/>
@@ -37,7 +37,7 @@ namespace MusicStory
         }
 
         /// <remarks/>
-        public byte code
+        public uint code
         {
             get
             {
@@ -50,7 +50,7 @@ namespace MusicStory
         }
 
         /// <remarks/>
-        public byte count
+        public uint count
         {
             get
             {
@@ -63,7 +63,7 @@ namespace MusicStory
         }
 
         /// <remarks/>
-        public byte pageCount
+        public uint pageCount
         {
             get
             {
@@ -76,7 +76,7 @@ namespace MusicStory
         }
 
         /// <remarks/>
-        public byte currentPage
+        public uint currentPage
         {
             get
             {
