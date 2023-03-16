@@ -33,30 +33,30 @@
             this.background = new MusicStory.CardComponents();
             this.Biography = new System.Windows.Forms.WebBrowser();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Instagram = new System.Windows.Forms.PictureBox();
+            this.Twitter = new System.Windows.Forms.PictureBox();
+            this.Youtube = new System.Windows.Forms.PictureBox();
             this.picturePanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.Artist_Name = new System.Windows.Forms.Label();
+            this.ArtistPFP = new MusicStory.CircleAvatar();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.Back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.Albums = new System.Windows.Forms.FlowLayoutPanel();
-            this.Back = new System.Windows.Forms.Button();
-            this.ArtistPFP = new MusicStory.CircleAvatar();
-            this.Instagram = new System.Windows.Forms.PictureBox();
-            this.Twitter = new System.Windows.Forms.PictureBox();
-            this.Youtube = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
             this.background.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.picturePanel.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Instagram)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Twitter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Youtube)).BeginInit();
+            this.picturePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -106,6 +106,38 @@
             this.panel1.Size = new System.Drawing.Size(520, 111);
             this.panel1.TabIndex = 0;
             // 
+            // Instagram
+            // 
+            this.Instagram.InitialImage = global::MusicStory.Properties.Resources.instagram;
+            this.Instagram.Location = new System.Drawing.Point(408, 29);
+            this.Instagram.Name = "Instagram";
+            this.Instagram.Size = new System.Drawing.Size(100, 53);
+            this.Instagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Instagram.TabIndex = 2;
+            this.Instagram.TabStop = false;
+            this.Instagram.Click += new System.EventHandler(this.Instagram_Click);
+            // 
+            // Twitter
+            // 
+            this.Twitter.InitialImage = global::MusicStory.Properties.Resources.twitter;
+            this.Twitter.Location = new System.Drawing.Point(219, 29);
+            this.Twitter.Name = "Twitter";
+            this.Twitter.Size = new System.Drawing.Size(100, 53);
+            this.Twitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Twitter.TabIndex = 1;
+            this.Twitter.TabStop = false;
+            this.Twitter.Click += new System.EventHandler(this.Twitter_Click);
+            // 
+            // Youtube
+            // 
+            this.Youtube.Location = new System.Drawing.Point(33, 29);
+            this.Youtube.Name = "Youtube";
+            this.Youtube.Size = new System.Drawing.Size(100, 53);
+            this.Youtube.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Youtube.TabIndex = 0;
+            this.Youtube.TabStop = false;
+            this.Youtube.Click += new System.EventHandler(this.Youtube_Click);
+            // 
             // picturePanel
             // 
             this.picturePanel.BackColor = System.Drawing.Color.Transparent;
@@ -141,6 +173,20 @@
             this.Artist_Name.TabIndex = 1;
             this.Artist_Name.Text = "label1";
             // 
+            // ArtistPFP
+            // 
+            this.ArtistPFP.BorderGradientBottom = System.Drawing.Color.LemonChiffon;
+            this.ArtistPFP.BorderGradientTop = System.Drawing.Color.Plum;
+            this.ArtistPFP.BorderRadius = 40;
+            this.ArtistPFP.BorderSize = 1;
+            this.ArtistPFP.GradientAngle = 120F;
+            this.ArtistPFP.Location = new System.Drawing.Point(0, 0);
+            this.ArtistPFP.Name = "ArtistPFP";
+            this.ArtistPFP.Size = new System.Drawing.Size(265, 265);
+            this.ArtistPFP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ArtistPFP.TabIndex = 0;
+            this.ArtistPFP.TabStop = false;
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.Back);
@@ -149,6 +195,23 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(482, 53);
             this.panel4.TabIndex = 5;
+            // 
+            // Back
+            // 
+            this.Back.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Back.FlatAppearance.BorderColor = System.Drawing.Color.LemonChiffon;
+            this.Back.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(160)))));
+            this.Back.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(120)))));
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.Image = global::MusicStory.Properties.Resources.left_arrow;
+            this.Back.Location = new System.Drawing.Point(0, 0);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(482, 53);
+            this.Back.TabIndex = 3;
+            this.Back.Text = "Indietro";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
             // 
@@ -187,69 +250,6 @@
             this.Albums.Size = new System.Drawing.Size(482, 216);
             this.Albums.TabIndex = 0;
             // 
-            // Back
-            // 
-            this.Back.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Back.FlatAppearance.BorderColor = System.Drawing.Color.LemonChiffon;
-            this.Back.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(160)))));
-            this.Back.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(120)))));
-            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Image = global::MusicStory.Properties.Resources.left_arrow;
-            this.Back.Location = new System.Drawing.Point(0, 0);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(482, 53);
-            this.Back.TabIndex = 3;
-            this.Back.Text = "Indietro";
-            this.Back.UseVisualStyleBackColor = true;
-            this.Back.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // ArtistPFP
-            // 
-            this.ArtistPFP.BorderGradientBottom = System.Drawing.Color.LemonChiffon;
-            this.ArtistPFP.BorderGradientTop = System.Drawing.Color.Plum;
-            this.ArtistPFP.BorderRadius = 40;
-            this.ArtistPFP.BorderSize = 1;
-            this.ArtistPFP.GradientAngle = 120F;
-            this.ArtistPFP.Location = new System.Drawing.Point(0, 0);
-            this.ArtistPFP.Name = "ArtistPFP";
-            this.ArtistPFP.Size = new System.Drawing.Size(265, 265);
-            this.ArtistPFP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.ArtistPFP.TabIndex = 0;
-            this.ArtistPFP.TabStop = false;
-            // 
-            // Instagram
-            // 
-            this.Instagram.InitialImage = global::MusicStory.Properties.Resources.instagram;
-            this.Instagram.Location = new System.Drawing.Point(408, 29);
-            this.Instagram.Name = "Instagram";
-            this.Instagram.Size = new System.Drawing.Size(100, 53);
-            this.Instagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Instagram.TabIndex = 2;
-            this.Instagram.TabStop = false;
-            this.Instagram.Click += new System.EventHandler(this.Instagram_Click);
-            // 
-            // Twitter
-            // 
-            this.Twitter.InitialImage = global::MusicStory.Properties.Resources.twitter;
-            this.Twitter.Location = new System.Drawing.Point(219, 29);
-            this.Twitter.Name = "Twitter";
-            this.Twitter.Size = new System.Drawing.Size(100, 53);
-            this.Twitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Twitter.TabIndex = 1;
-            this.Twitter.TabStop = false;
-            this.Twitter.Click += new System.EventHandler(this.Twitter_Click);
-            // 
-            // Youtube
-            // 
-            this.Youtube.Location = new System.Drawing.Point(33, 29);
-            this.Youtube.Name = "Youtube";
-            this.Youtube.Size = new System.Drawing.Size(100, 53);
-            this.Youtube.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Youtube.TabIndex = 0;
-            this.Youtube.TabStop = false;
-            this.Youtube.Click += new System.EventHandler(this.Youtube_Click);
-            // 
             // ArtistInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -269,15 +269,15 @@
             this.panel3.ResumeLayout(false);
             this.background.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.picturePanel.ResumeLayout(false);
-            this.picturePanel.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Instagram)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Twitter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Youtube)).EndInit();
+            this.picturePanel.ResumeLayout(false);
+            this.picturePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -298,7 +298,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.FlowLayoutPanel Albums;
         private System.Windows.Forms.WebBrowser Biography;
+        public System.Windows.Forms.FlowLayoutPanel Albums;
     }
 }

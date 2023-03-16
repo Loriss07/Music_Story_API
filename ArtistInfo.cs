@@ -73,10 +73,18 @@ namespace MusicStory
         }
         private async void Album()
         {
-            root Albums = await client.GetAlbums(ID);
-            if (Albums != null)
+            root Risposta = await client.GetAlbums(ID);
+            if (Risposta != null)
             {
-                foreach (var album in Albums.data)
+                for (int i = 0; i < Risposta.data.Count(); i++)
+                {
+                    CartaAlbum album = new CartaAlbum();
+                    album.Album_name = Risposta.data[i].title;
+                    album.Album_id = Risposta.data[i].id;
+
+                    Albums.Controls.Add(album);
+                }
+                foreach (var album in Risposta.data)
                 {
                     MessageBox.Show(album.title);
                 }
