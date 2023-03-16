@@ -34,9 +34,8 @@ namespace MusicStory
     public partial class rootItem
     {
         // Contiene tutte le proprietà che le risposte XML possono contenere
-        private uint idField;
+        private string idField;
         private string nameField;
-        private int width;
         private object ipiField;
         private string typeField;
         private string urlField;
@@ -45,6 +44,7 @@ namespace MusicStory
         private byte coeff_actuField;
         private string update_dateField;
         private string creation_dateField;
+        
         private uint id_sourceField;
         private string sourceField;
         private ushort widthField;
@@ -59,12 +59,18 @@ namespace MusicStory
         private string labelField;
         private object distributorField;
         private string formatField;
-        private DateTime release_dateField;
+        private string release_dateField;
         private string linkField;
+        private string headerField;
+        private object linked_headerField;
+        private string contentField;
+        private object linked_contentField;
+        private object authorField;
+        private string langField;
 
 
         /// <remarks/>
-        public uint id
+        public string id
             {
                 get
                 {
@@ -314,14 +320,19 @@ namespace MusicStory
             }
         }
 
-        public int Width { get => width; set => width = value; }
-        public ushort WidthField { get => widthField; set => widthField = value; }
-        public string TitleField { get => titleField; set => titleField = value; }
-        public string LabelField { get => labelField; set => labelField = value; }
-        public object DistributorField { get => distributorField; set => distributorField = value; }
-        public string FormatField { get => formatField; set => formatField = value; }
-        public DateTime Release_dateField { get => release_dateField; set => release_dateField = value; }
-        public string LinkField { get => linkField; set => linkField = value; }
+        public ushort width { get => widthField; set => widthField = value; }
+        public string title { get => titleField; set => titleField = value; }
+        public string label { get => labelField; set => labelField = value; }
+        public object distributor { get => distributorField; set => distributorField = value; }
+        public string format { get => formatField; set => formatField = value; }
+        public string release_date { get => release_dateField; set { release_dateField = value; }  }
+        public string link { get => linkField; set => linkField = value; }
+        public string header { get => headerField; set => headerField = value; }
+        public object linked_header { get => linked_headerField; set => linked_headerField = value; }
+        public string content { get => contentField; set => contentField = value; }
+        public object linked_content { get => linked_contentField; set => linked_contentField = value; }
+        public object author { get => authorField; set => authorField = value; }
+        public string lang { get => langField; set => langField = value; }
     }
 
 

@@ -80,17 +80,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArtistCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ArtistCard.Designer.cs">
-      <DependentUpon>ArtistCard.cs</DependentUpon>
-    </Compile>
     <Compile Include="ArtistInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ArtistInfo.Designer.cs">
       <DependentUpon>ArtistInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CartaAlbum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CartaAlbum.Designer.cs">
+      <DependentUpon>CartaAlbum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CartaArtista.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CartaArtista.Designer.cs">
+      <DependentUpon>CartaArtista.cs</DependentUpon>
     </Compile>
     <Compile Include="CircleAvatar.cs">
       <SubType>Component</SubType>
@@ -98,6 +104,7 @@
     <Compile Include="CircleAvatar.Designer.cs">
       <DependentUpon>CircleAvatar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class1.cs" />
     <Compile Include="MyPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -118,11 +125,14 @@
     <Compile Include="MusicStoryClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ArtistCard.resx">
-      <DependentUpon>ArtistCard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ArtistInfo.resx">
       <DependentUpon>ArtistInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CartaAlbum.resx">
+      <DependentUpon>CartaAlbum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CartaArtista.resx">
+      <DependentUpon>CartaArtista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

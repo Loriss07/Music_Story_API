@@ -28,23 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArtistInfo));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panelAlbums = new System.Windows.Forms.FlowLayoutPanel();
-            this.picturePanel = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.Artist_Name = new System.Windows.Forms.Label();
-            this.circleAvatar1 = new MusicStory.CircleAvatar();
             this.background = new MusicStory.CardComponents();
+            this.Biography = new System.Windows.Forms.WebBrowser();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.picturePanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Artist_Name = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.Albums = new System.Windows.Forms.FlowLayoutPanel();
+            this.Back = new System.Windows.Forms.Button();
+            this.ArtistPFP = new MusicStory.CircleAvatar();
             this.Instagram = new System.Windows.Forms.PictureBox();
             this.Twitter = new System.Windows.Forms.PictureBox();
             this.Youtube = new System.Windows.Forms.PictureBox();
             this.panel3.SuspendLayout();
-            this.picturePanel.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circleAvatar1)).BeginInit();
             this.background.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.picturePanel.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Instagram)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Twitter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Youtube)).BeginInit();
@@ -54,68 +63,16 @@
             // 
             this.panel3.Controls.Add(this.background);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(461, 0);
+            this.panel3.Location = new System.Drawing.Point(482, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(537, 572);
+            this.panel3.Size = new System.Drawing.Size(520, 609);
             this.panel3.TabIndex = 2;
-            // 
-            // panelAlbums
-            // 
-            this.panelAlbums.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAlbums.Location = new System.Drawing.Point(0, 0);
-            this.panelAlbums.Name = "panelAlbums";
-            this.panelAlbums.Size = new System.Drawing.Size(461, 307);
-            this.panelAlbums.TabIndex = 4;
-            // 
-            // picturePanel
-            // 
-            this.picturePanel.Controls.Add(this.Artist_Name);
-            this.picturePanel.Controls.Add(this.circleAvatar1);
-            this.picturePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picturePanel.Location = new System.Drawing.Point(0, 0);
-            this.picturePanel.Name = "picturePanel";
-            this.picturePanel.Size = new System.Drawing.Size(461, 265);
-            this.picturePanel.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.panelAlbums);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 265);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(461, 307);
-            this.panel2.TabIndex = 5;
-            // 
-            // Artist_Name
-            // 
-            this.Artist_Name.AutoSize = true;
-            this.Artist_Name.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Artist_Name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.Artist_Name.Location = new System.Drawing.Point(271, 115);
-            this.Artist_Name.Name = "Artist_Name";
-            this.Artist_Name.Size = new System.Drawing.Size(85, 34);
-            this.Artist_Name.TabIndex = 1;
-            this.Artist_Name.Text = "label1";
-            // 
-            // circleAvatar1
-            // 
-            this.circleAvatar1.BorderGradientBottom = System.Drawing.Color.LemonChiffon;
-            this.circleAvatar1.BorderGradientTop = System.Drawing.Color.Plum;
-            this.circleAvatar1.BorderRadius = 40;
-            this.circleAvatar1.BorderSize = 1;
-            this.circleAvatar1.GradientAngle = 120F;
-            this.circleAvatar1.Location = new System.Drawing.Point(0, 0);
-            this.circleAvatar1.Name = "circleAvatar1";
-            this.circleAvatar1.Size = new System.Drawing.Size(265, 265);
-            this.circleAvatar1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.circleAvatar1.TabIndex = 0;
-            this.circleAvatar1.TabStop = false;
             // 
             // background
             // 
             this.background.BackColor = System.Drawing.Color.White;
-            this.background.BorderRadius = 20;
+            this.background.BorderRadius = 0;
+            this.background.Controls.Add(this.Biography);
             this.background.Controls.Add(this.panel1);
             this.background.Dock = System.Windows.Forms.DockStyle.Fill;
             this.background.ForeColor = System.Drawing.Color.Black;
@@ -124,8 +81,18 @@
             this.background.GradientTopColor = System.Drawing.Color.Plum;
             this.background.Location = new System.Drawing.Point(0, 0);
             this.background.Name = "background";
-            this.background.Size = new System.Drawing.Size(537, 572);
+            this.background.Size = new System.Drawing.Size(520, 609);
             this.background.TabIndex = 0;
+            // 
+            // Biography
+            // 
+            this.Biography.AllowNavigation = false;
+            this.Biography.Location = new System.Drawing.Point(33, 32);
+            this.Biography.Margin = new System.Windows.Forms.Padding(20);
+            this.Biography.MinimumSize = new System.Drawing.Size(20, 20);
+            this.Biography.Name = "Biography";
+            this.Biography.Size = new System.Drawing.Size(458, 443);
+            this.Biography.TabIndex = 1;
             // 
             // panel1
             // 
@@ -134,59 +101,180 @@
             this.panel1.Controls.Add(this.Twitter);
             this.panel1.Controls.Add(this.Youtube);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 471);
+            this.panel1.Location = new System.Drawing.Point(0, 498);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(537, 101);
+            this.panel1.Size = new System.Drawing.Size(520, 111);
             this.panel1.TabIndex = 0;
+            // 
+            // picturePanel
+            // 
+            this.picturePanel.BackColor = System.Drawing.Color.Transparent;
+            this.picturePanel.Controls.Add(this.label1);
+            this.picturePanel.Controls.Add(this.Artist_Name);
+            this.picturePanel.Controls.Add(this.ArtistPFP);
+            this.picturePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picturePanel.Location = new System.Drawing.Point(0, 0);
+            this.picturePanel.Name = "picturePanel";
+            this.picturePanel.Size = new System.Drawing.Size(482, 282);
+            this.picturePanel.TabIndex = 3;
+            this.picturePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.picturePanel_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Azure;
+            this.label1.Location = new System.Drawing.Point(273, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 22);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "label1";
+            // 
+            // Artist_Name
+            // 
+            this.Artist_Name.AutoSize = true;
+            this.Artist_Name.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Artist_Name.ForeColor = System.Drawing.Color.Azure;
+            this.Artist_Name.Location = new System.Drawing.Point(271, 37);
+            this.Artist_Name.Name = "Artist_Name";
+            this.Artist_Name.Size = new System.Drawing.Size(85, 34);
+            this.Artist_Name.TabIndex = 1;
+            this.Artist_Name.Text = "label1";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.Back);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 274);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(482, 53);
+            this.panel4.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 282);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(482, 327);
+            this.panel2.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.Albums);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(482, 274);
+            this.panel5.TabIndex = 6;
+            // 
+            // panel6
+            // 
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 216);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(482, 58);
+            this.panel6.TabIndex = 1;
+            // 
+            // Albums
+            // 
+            this.Albums.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Albums.Location = new System.Drawing.Point(0, 0);
+            this.Albums.Name = "Albums";
+            this.Albums.Size = new System.Drawing.Size(482, 216);
+            this.Albums.TabIndex = 0;
+            // 
+            // Back
+            // 
+            this.Back.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Back.FlatAppearance.BorderColor = System.Drawing.Color.LemonChiffon;
+            this.Back.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(160)))));
+            this.Back.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(120)))));
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.Image = global::MusicStory.Properties.Resources.left_arrow;
+            this.Back.Location = new System.Drawing.Point(0, 0);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(482, 53);
+            this.Back.TabIndex = 3;
+            this.Back.Text = "Indietro";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ArtistPFP
+            // 
+            this.ArtistPFP.BorderGradientBottom = System.Drawing.Color.LemonChiffon;
+            this.ArtistPFP.BorderGradientTop = System.Drawing.Color.Plum;
+            this.ArtistPFP.BorderRadius = 40;
+            this.ArtistPFP.BorderSize = 1;
+            this.ArtistPFP.GradientAngle = 120F;
+            this.ArtistPFP.Location = new System.Drawing.Point(0, 0);
+            this.ArtistPFP.Name = "ArtistPFP";
+            this.ArtistPFP.Size = new System.Drawing.Size(265, 265);
+            this.ArtistPFP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.ArtistPFP.TabIndex = 0;
+            this.ArtistPFP.TabStop = false;
             // 
             // Instagram
             // 
             this.Instagram.InitialImage = global::MusicStory.Properties.Resources.instagram;
-            this.Instagram.Location = new System.Drawing.Point(413, 27);
+            this.Instagram.Location = new System.Drawing.Point(408, 29);
             this.Instagram.Name = "Instagram";
-            this.Instagram.Size = new System.Drawing.Size(100, 50);
+            this.Instagram.Size = new System.Drawing.Size(100, 53);
             this.Instagram.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Instagram.TabIndex = 2;
             this.Instagram.TabStop = false;
+            this.Instagram.Click += new System.EventHandler(this.Instagram_Click);
             // 
             // Twitter
             // 
             this.Twitter.InitialImage = global::MusicStory.Properties.Resources.twitter;
-            this.Twitter.Location = new System.Drawing.Point(219, 27);
+            this.Twitter.Location = new System.Drawing.Point(219, 29);
             this.Twitter.Name = "Twitter";
-            this.Twitter.Size = new System.Drawing.Size(100, 50);
+            this.Twitter.Size = new System.Drawing.Size(100, 53);
             this.Twitter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Twitter.TabIndex = 1;
             this.Twitter.TabStop = false;
+            this.Twitter.Click += new System.EventHandler(this.Twitter_Click);
             // 
             // Youtube
             // 
-            this.Youtube.Location = new System.Drawing.Point(33, 27);
+            this.Youtube.Location = new System.Drawing.Point(33, 29);
             this.Youtube.Name = "Youtube";
-            this.Youtube.Size = new System.Drawing.Size(100, 50);
+            this.Youtube.Size = new System.Drawing.Size(100, 53);
             this.Youtube.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Youtube.TabIndex = 0;
             this.Youtube.TabStop = false;
-            this.Youtube.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.Youtube.Click += new System.EventHandler(this.Youtube_Click);
             // 
             // ArtistInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LemonChiffon;
-            this.ClientSize = new System.Drawing.Size(998, 572);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(80)))));
+            this.ClientSize = new System.Drawing.Size(1002, 609);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.picturePanel);
             this.Controls.Add(this.panel3);
+            this.Font = new System.Drawing.Font("Bahnschrift", 8.25F);
+            this.ForeColor = System.Drawing.Color.Transparent;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ArtistInfo";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "ArtistInfo";
             this.panel3.ResumeLayout(false);
-            this.picturePanel.ResumeLayout(false);
-            this.picturePanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.circleAvatar1)).EndInit();
             this.background.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.picturePanel.ResumeLayout(false);
+            this.picturePanel.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Instagram)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Twitter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Youtube)).EndInit();
@@ -202,9 +290,15 @@
         private System.Windows.Forms.PictureBox Instagram;
         private System.Windows.Forms.PictureBox Twitter;
         private System.Windows.Forms.PictureBox Youtube;
-        private CircleAvatar circleAvatar1;
-        private System.Windows.Forms.FlowLayoutPanel panelAlbums;
-        private System.Windows.Forms.Panel panel2;
+        private CircleAvatar ArtistPFP;
         private System.Windows.Forms.Label Artist_Name;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button Back;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.FlowLayoutPanel Albums;
+        private System.Windows.Forms.WebBrowser Biography;
     }
 }

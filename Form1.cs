@@ -14,13 +14,15 @@ namespace MusicStory
 {
     public partial class Form1 : Form
     {
-        private MusicStoryClient Client;
-        private List<Carta> Result_List;
+        public static MusicStoryClient Client;
+        private List<CartaArtista> Result_List;
         private string nome;
-        private uint artistID;
+        private string artistID;
+
+
         public Form1()
         {
-            Result_List = new List<Carta>();
+            Result_List = new List<CartaArtista>();
             string ConsumerKey = "a406b97e8c4536f215d8610e5aed3e36c0825cca";
             string ConsumerSecret = "d4558644cdb6e8db2287627751bfa7e9eea577ed";
             string AccessToken = "1afcbd4add8503ab72afa2068957cfab4df2bbbc";
@@ -32,8 +34,7 @@ namespace MusicStory
             InitializeComponent();
             Previous.Image = Back;
             Next.Image = Forth;
-            /*ArtistInfo f = new ArtistInfo(artistID, ref Client);
-            f.Show();*/
+            
         }
         public async void Cerca()
         {
@@ -41,12 +42,10 @@ namespace MusicStory
             {
                 Search.BorderColor = Color.CornflowerBlue;
                 Search.BackColor = Color.LightSteelBlue;
-                
-                object a = await Client.GetArtist(SearchBar.Text);
-                root Risposta = a as root;
+
+                root Risposta = await Client.GetArtist(SearchBar.Text);
+
                 Mostra(Risposta);
-                //MessageBox.Show(Risposta.data[0].name);
-                
                 
             }
             else
@@ -58,13 +57,16 @@ namespace MusicStory
             
         }
 
-        private void Carta_Click(object sender, EventArgs e)
+        private void Carta_Click(object sender, MouseEventArgs e)
         {
             
+            /*
             Carta artist = sender as Carta;
             artistID = artist.ArtistID;
-            throw new NotImplementedException();
-            
+            ArtistInfo f = new ArtistInfo(artist.ArtistID, nome, ref Client);
+            f.Show();*/
+            //throw new NotImplementedException();
+
         }
         private void Pulisci()
         {
@@ -72,9 +74,9 @@ namespace MusicStory
             {
 
 
-                foreach (Carta item in Result_List)
+                foreach (CartaArtista item in Result_List)
                 {
-                    item.Picture.Image.Dispose();
+                    item.ImgArtista.Image.Dispose();
                     Results.Controls.Remove(item);
 
                 }
@@ -100,7 +102,7 @@ namespace MusicStory
         public async void Avanti()
         {
 
-            object a = await Client.NextPage(nome);
+            object a = await Client.NextArtists(nome);
             root res = a as root;
             Pulisci();
             Mostra(res);
@@ -108,18 +110,18 @@ namespace MusicStory
         public async void Indietro()
         {
 
-            object a = await Client.PreviousPage(nome);
+            object a = await Client.PreviousArtists(nome);
             root res = a as root;
             Pulisci();
             Mostra(res);
         }
 
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e) { DeleteFiles();}
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e) { }
         private void DeleteFiles()
         {
             DirectoryInfo di = new DirectoryInfo("./img");
-            foreach (Carta item in Result_List)
-                item.Picture.Image.Dispose();
+            foreach (CartaArtista item in Result_List)
+                item.ImgArtista.Image.Dispose();
 
             Result_List.Clear();
 
@@ -137,20 +139,32 @@ namespace MusicStory
             
             for (int i = 0; i < Risposta.data.Length; i++)
             {
-                Carta carta = new Carta();
+                CartaArtista carta = new CartaArtista();
                 Result_List.Add(carta);
                 carta.Nome = Risposta.data[i].name;
                 carta.ArtistID = Risposta.data[i].id;
-                carta.Click += new EventHandler(Carta_Click);
                 Page.Text = Convert.ToString(Risposta.currentPage);
-                int img = await Client.GetImage(carta.ArtistID, i);
+                int img = await Client.GetImage(carta.ArtistID);
 
                 if (img == 1)
-                    carta.Picture.Image = new Bitmap($"./img/img{i}.png");
-             
+                {
+                    using (FileStream image = File.Open($"./img/img{carta.ArtistID}.png", FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        carta.ImgArtista.Image = new Bitmap(image);
+                        image.Close();
+                    }
+                    
+                }
                 Results.Controls.Add(carta);
 
             }
         }
+
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DeleteFiles();
+        }
+
     }
 }

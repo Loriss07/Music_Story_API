@@ -15,12 +15,15 @@ using RestSharp.Serializers.Xml;
 
 namespace MusicStory
 {
-    internal class MusicStoryClient
+    public class MusicStoryClient
     {
         static RestClient http;
         private string URL { get; set; }
         private root Response;
         private root ImgResponse;
+        private root AlbumResponse;
+        private root LinkResponse;
+        private root BioResponse;
         public MusicStoryClient()
         {
             URL = "";
@@ -38,7 +41,7 @@ namespace MusicStory
             http.Authenticator = OAuth1Authenticator.ForAccessToken(consumerKey, consumerSecret, accessToken, 
                             tokenSecret, OAuthSignatureMethod.HmacSha1);
         }
-        public async Task<root> NextPage(string artistName)
+        public async Task<root> NextArtists(string artistName)
         {
             string subURL = "/artist/search?name=" + artistName + "&page=" + Convert.ToString(Response.currentPage + 1);
             if (Response != null && Response.currentPage <= Response.pageCount)
@@ -47,11 +50,30 @@ namespace MusicStory
             return Response;
 
         }
-        public async Task<root> PreviousPage(string artistName)
+        public async Task<root> PreviousArtists(string artistName)
         {
 
             string subURL = "/artist/search?name=" + artistName + "&page=" + Convert.ToString(Response.currentPage - 1);
+            if (Response != null && Response.currentPage > 0)
+                Response = await GetResponse(subURL);
+
+
+            return Response;
+        }
+        public async Task<root> NextAlbum(string ID_Album)
+        {
+            string subURL = $"/artist/{ID_Album}/albums?format=Album&page={Convert.ToString(Response.currentPage + 1)}";
             if (Response != null && Response.currentPage <= Response.pageCount)
+                Response = await GetResponse(subURL);
+
+            return Response;
+
+        }
+        public async Task<root> PreviousAlbum(string ID_Album)
+        {
+
+            string subURL = $"/artist/{ID_Album}/albums?format=Album&page={Convert.ToString(Response.currentPage - 1)}";
+            if (Response != null && Response.currentPage > 0)
                 Response = await GetResponse(subURL);
 
 
@@ -62,11 +84,9 @@ namespace MusicStory
             
             string subURL = "/artist/search?name=" + artistName;
             Response = await GetResponse(subURL);
-            
             return Response;
-         
         }
-        public async Task<int> GetImage(uint artist_ID,int index)
+        public async Task<int> GetImage(string artist_ID)
         {
             int success;
             string subURL = $"/artist/{artist_ID}/pictures";
@@ -75,12 +95,10 @@ namespace MusicStory
             {
                 RestRequest request = new RestRequest(ImgResponse.data[0].url, Method.Get);
 
-                using (var file = File.Create($"./img/img{index}.png"))
+                using (var file = File.Create($"./img/img{artist_ID}.png"))
                 using (BinaryWriter image = new BinaryWriter(file))
                 {
-                    
                     image.Write(http.DownloadData(request));
-                    
                 }
                 success = 1;
             }
@@ -88,14 +106,25 @@ namespace MusicStory
                 success = -1;
             return success; 
         }
-        public async Task<root> GetAlbums(uint artist_ID)
+        public async Task<root> GetAlbums(string artist_ID)
         {
             string subURL = $"/artist/{artist_ID}/albums?format=Album"; //Serve a restituire SOLO gli Album (no singoli, no EP...)
-            return new root();
+            AlbumResponse = await GetResponse(subURL);
+
+            return AlbumResponse;
         }
-        public async Task<root> GetLink(uint artist_ID)
+        public async Task<root> GetLink(string artist_ID,string social)
         {
-            return new root();
+            string subURL = $"/artist/{artist_ID}/{social}"; //Serve a restituire SOLO gli Album (no singoli, no EP...)
+            LinkResponse = await GetResponse(subURL);
+
+            return LinkResponse;
+        }
+        public async Task<root> GetBiography(string artistID)
+        {
+            string subURL = $"artist/{artistID}/biographies";
+            BioResponse = await GetResponse(subURL);
+            return BioResponse;
         }
         private async Task<root> GetResponse(string subURL)
         {
