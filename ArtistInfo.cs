@@ -18,6 +18,7 @@ namespace MusicStory
             client = Client;
             ID = Artist_ID;
             Artist_Name.Text = ArtistName;
+            AlbumInfo.Hide();
             LoadSocial();
             //LoadBiography();
             SetImage();
@@ -79,6 +80,8 @@ namespace MusicStory
                     album.Album_id = Risposta.data[i].id;
                     album.Data_Pubblicazione = DateTime.Parse(Risposta.data[i].release_date);
                     album.Click += Album_Click;
+                    album.ImgAlbum.Click += Album_Click;
+                    album.Title.Click += Album_Click;
                     album.Valutazione = await client.GetReview(album.Album_id);
                     string recording_ID = await client.GetRelease(album.Album_id);
                     int img = await client.GetImage(recording_ID, "release");
@@ -98,8 +101,9 @@ namespace MusicStory
             }
         }
 
-        private async void Album_Click(object sender, EventArgs e)
+        private void Album_Click(object sender, EventArgs e)
         {
+            AlbumInfo.Show();
             CartaAlbum album = sender as CartaAlbum;
             Titolo.Text = album.Album_name;
             Data.Text = album.Data_Pubblicazione.ToShortDateString();
@@ -131,6 +135,11 @@ namespace MusicStory
         }
 
         private void picturePanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Albums_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -29,36 +29,38 @@
         private void InitializeComponent()
         {
             this.ImgAlbum = new System.Windows.Forms.PictureBox();
-            this.cardComponents1 = new MusicStory.CardComponents();
+            this.Title = new MusicStory.CardComponents();
             this.AlbumName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ImgAlbum)).BeginInit();
-            this.cardComponents1.SuspendLayout();
+            this.Title.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImgAlbum
             // 
+            this.ImgAlbum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ImgAlbum.Location = new System.Drawing.Point(0, 0);
             this.ImgAlbum.Name = "ImgAlbum";
-            this.ImgAlbum.Size = new System.Drawing.Size(125, 125);
+            this.ImgAlbum.Size = new System.Drawing.Size(128, 179);
             this.ImgAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImgAlbum.TabIndex = 0;
             this.ImgAlbum.TabStop = false;
+            this.ImgAlbum.Click += new System.EventHandler(this.ImgAlbum_Click);
             // 
-            // cardComponents1
+            // Title
             // 
-            this.cardComponents1.BackColor = System.Drawing.Color.White;
-            this.cardComponents1.BorderRadius = 20;
-            this.cardComponents1.Controls.Add(this.AlbumName);
-            this.cardComponents1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cardComponents1.ForeColor = System.Drawing.Color.Black;
-            this.cardComponents1.GradientAngle = 90F;
-            this.cardComponents1.GradientBottomColor = System.Drawing.Color.LemonChiffon;
-            this.cardComponents1.GradientTopColor = System.Drawing.Color.Transparent;
-            this.cardComponents1.Location = new System.Drawing.Point(0, 124);
-            this.cardComponents1.Name = "cardComponents1";
-            this.cardComponents1.Size = new System.Drawing.Size(128, 55);
-            this.cardComponents1.TabIndex = 1;
-            this.cardComponents1.Click += new System.EventHandler(this.cardComponents1_Click);
+            this.Title.BackColor = System.Drawing.Color.White;
+            this.Title.BorderRadius = 0;
+            this.Title.Controls.Add(this.AlbumName);
+            this.Title.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Title.ForeColor = System.Drawing.Color.Black;
+            this.Title.GradientAngle = 90F;
+            this.Title.GradientBottomColor = System.Drawing.Color.Plum;
+            this.Title.GradientTopColor = System.Drawing.Color.Transparent;
+            this.Title.Location = new System.Drawing.Point(0, 124);
+            this.Title.Name = "Title";
+            this.Title.Size = new System.Drawing.Size(128, 55);
+            this.Title.TabIndex = 1;
+            this.Title.Click += new System.EventHandler(this.cardComponents1_Click);
             // 
             // AlbumName
             // 
@@ -75,21 +77,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.cardComponents1);
+            this.Controls.Add(this.Title);
             this.Controls.Add(this.ImgAlbum);
             this.Name = "CartaAlbum";
             this.Size = new System.Drawing.Size(128, 179);
             this.Click += new System.EventHandler(this.CartaAlbum_Click);
             ((System.ComponentModel.ISupportInitialize)(this.ImgAlbum)).EndInit();
-            this.cardComponents1.ResumeLayout(false);
-            this.cardComponents1.PerformLayout();
+            this.Title.ResumeLayout(false);
+            this.Title.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private CardComponents cardComponents1;
         private System.Windows.Forms.Label AlbumName;
         public System.Windows.Forms.PictureBox ImgAlbum;
+        public CardComponents Title;
     }
 }

@@ -40,7 +40,7 @@
             this.Albums = new System.Windows.Forms.FlowLayoutPanel();
             this.Voto = new System.Windows.Forms.Label();
             this.valVoto = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.AlbumInfo = new System.Windows.Forms.Panel();
             this.Titolo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Data = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.AlbumInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).BeginInit();
             this.background.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,9 +71,9 @@
             // 
             this.panel3.Controls.Add(this.background);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(512, 0);
+            this.panel3.Location = new System.Drawing.Point(537, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(520, 609);
+            this.panel3.Size = new System.Drawing.Size(520, 603);
             this.panel3.TabIndex = 2;
             // 
             // picturePanel
@@ -85,7 +85,7 @@
             this.picturePanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.picturePanel.Location = new System.Drawing.Point(0, 0);
             this.picturePanel.Name = "picturePanel";
-            this.picturePanel.Size = new System.Drawing.Size(512, 282);
+            this.picturePanel.Size = new System.Drawing.Size(537, 282);
             this.picturePanel.TabIndex = 3;
             this.picturePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.picturePanel_Paint);
             // 
@@ -115,9 +115,9 @@
             // 
             this.panel4.Controls.Add(this.Back);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 274);
+            this.panel4.Location = new System.Drawing.Point(0, 268);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(512, 53);
+            this.panel4.Size = new System.Drawing.Size(537, 53);
             this.panel4.TabIndex = 5;
             // 
             // Back
@@ -131,7 +131,7 @@
             this.Back.Image = global::MusicStory.Properties.Resources.left_arrow;
             this.Back.Location = new System.Drawing.Point(0, 0);
             this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(512, 53);
+            this.Back.Size = new System.Drawing.Size(537, 53);
             this.Back.TabIndex = 3;
             this.Back.Text = "Indietro";
             this.Back.UseVisualStyleBackColor = true;
@@ -145,17 +145,17 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 282);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(512, 327);
+            this.panel2.Size = new System.Drawing.Size(537, 321);
             this.panel2.TabIndex = 5;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.panel6);
+            this.panel5.Controls.Add(this.AlbumInfo);
             this.panel5.Controls.Add(this.Albums);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(512, 274);
+            this.panel5.Size = new System.Drawing.Size(537, 268);
             this.panel5.TabIndex = 6;
             // 
             // Albums
@@ -165,8 +165,9 @@
             this.Albums.Location = new System.Drawing.Point(0, 0);
             this.Albums.Name = "Albums";
             this.Albums.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Albums.Size = new System.Drawing.Size(512, 207);
+            this.Albums.Size = new System.Drawing.Size(537, 201);
             this.Albums.TabIndex = 0;
+            this.Albums.Paint += new System.Windows.Forms.PaintEventHandler(this.Albums_Paint);
             // 
             // Voto
             // 
@@ -188,20 +189,20 @@
             this.valVoto.TabIndex = 1;
             this.valVoto.Text = " ";
             // 
-            // panel6
+            // AlbumInfo
             // 
-            this.panel6.Controls.Add(this.Data);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Controls.Add(this.Titolo);
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Controls.Add(this.valVoto);
-            this.panel6.Controls.Add(this.Voto);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(0, 207);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(512, 67);
-            this.panel6.TabIndex = 1;
+            this.AlbumInfo.Controls.Add(this.Data);
+            this.AlbumInfo.Controls.Add(this.label5);
+            this.AlbumInfo.Controls.Add(this.Titolo);
+            this.AlbumInfo.Controls.Add(this.label4);
+            this.AlbumInfo.Controls.Add(this.label1);
+            this.AlbumInfo.Controls.Add(this.valVoto);
+            this.AlbumInfo.Controls.Add(this.Voto);
+            this.AlbumInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AlbumInfo.Location = new System.Drawing.Point(0, 201);
+            this.AlbumInfo.Name = "AlbumInfo";
+            this.AlbumInfo.Size = new System.Drawing.Size(537, 67);
+            this.AlbumInfo.TabIndex = 1;
             // 
             // Titolo
             // 
@@ -228,7 +229,7 @@
             // 
             this.Data.AutoSize = true;
             this.Data.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Data.Location = new System.Drawing.Point(434, 24);
+            this.Data.Location = new System.Drawing.Point(381, 23);
             this.Data.Name = "Data";
             this.Data.Size = new System.Drawing.Size(15, 24);
             this.Data.TabIndex = 7;
@@ -238,7 +239,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(292, 24);
+            this.label5.Location = new System.Drawing.Point(210, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 24);
             this.label5.TabIndex = 6;
@@ -281,7 +282,7 @@
             this.background.GradientTopColor = System.Drawing.Color.Plum;
             this.background.Location = new System.Drawing.Point(0, 0);
             this.background.Name = "background";
-            this.background.Size = new System.Drawing.Size(520, 609);
+            this.background.Size = new System.Drawing.Size(520, 603);
             this.background.TabIndex = 0;
             // 
             // Biography
@@ -301,7 +302,7 @@
             this.panel1.Controls.Add(this.Twitter);
             this.panel1.Controls.Add(this.Youtube);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 498);
+            this.panel1.Location = new System.Drawing.Point(0, 492);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(520, 111);
             this.panel1.TabIndex = 0;
@@ -343,7 +344,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(80)))));
-            this.ClientSize = new System.Drawing.Size(1032, 609);
+            this.ClientSize = new System.Drawing.Size(1057, 603);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.picturePanel);
             this.Controls.Add(this.panel3);
@@ -359,8 +360,8 @@
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.AlbumInfo.ResumeLayout(false);
+            this.AlbumInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).EndInit();
             this.background.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -388,13 +389,13 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.WebBrowser Biography;
         public System.Windows.Forms.FlowLayoutPanel Albums;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Label Data;
+        private System.Windows.Forms.Panel AlbumInfo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label Titolo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label valVoto;
         private System.Windows.Forms.Label Voto;
+        public System.Windows.Forms.Label Data;
+        public System.Windows.Forms.Label Titolo;
+        public System.Windows.Forms.Label valVoto;
     }
 }

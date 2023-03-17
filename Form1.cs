@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Text.Encodings;
 
 namespace MusicStory
 {
@@ -36,7 +37,6 @@ namespace MusicStory
 
                 try
                 {
-
                     root Risposta = await Client.GetArtist(SearchBar.Text);
                     Mostra(Risposta);
                 }

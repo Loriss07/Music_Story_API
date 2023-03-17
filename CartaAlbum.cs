@@ -30,10 +30,15 @@ namespace MusicStory
 
         private void cardComponents1_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void CartaAlbum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImgAlbum_Click(object sender, EventArgs e)
         {
 
         }
