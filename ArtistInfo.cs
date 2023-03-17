@@ -19,7 +19,7 @@ namespace MusicStory
             ID = Artist_ID;
             Artist_Name.Text = ArtistName;
             LoadSocial();
-            //LoadBiography();
+            LoadBiography();
             SetImage();
             Album();
         }

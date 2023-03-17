@@ -94,6 +94,11 @@ namespace MusicStory
         private object authorField;
         private string langField;
         private link linkItemField;
+        private byte rateField;
+        private byte max_rateField;
+        private byte percent_rateField;
+        private object dateField;
+        private object areaField;
 
 
 
@@ -361,6 +366,12 @@ namespace MusicStory
         public object linked_content { get => linked_contentField; set => linked_contentField = value; }
         public object author { get => authorField; set => authorField = value; }
         public string lang { get => langField; set => langField = value; }
+        public link LinkItemField { get => linkItemField; set => linkItemField = value; }
+        public byte rate { get => rateField; set => rateField = value; }
+        public byte max_rate { get => max_rateField; set => max_rateField = value; }
+        public byte percent_rate { get => percent_rateField; set => percent_rateField = value; }
+        public object date { get => dateField; set => dateField = value; }
+        public object area { get => areaField; set => areaField = value; }
     }
 
 

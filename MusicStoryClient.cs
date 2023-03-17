@@ -89,6 +89,15 @@ namespace MusicStory
             AlbumResponse = await GetResponse(subURL);
             return AlbumResponse.data[0].id;
         }
+        public async Task<int[]> GetReview(string album_ID)
+        {
+            int[] review = new int[2];
+            string subURL = $"/album/{album_ID}/reviews";
+            AlbumResponse = await GetResponse(subURL);
+            review[0] = AlbumResponse.data[0].rate;
+            review[1] = AlbumResponse.data[1].max_rate;
+            return review;
+        }
         public async Task<int> GetImage(string ID,string type)
         {
             int success = -1;
