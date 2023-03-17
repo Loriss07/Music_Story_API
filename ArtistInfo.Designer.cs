@@ -37,9 +37,15 @@
             this.Back = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.Albums = new System.Windows.Forms.FlowLayoutPanel();
             this.Voto = new System.Windows.Forms.Label();
+            this.valVoto = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.Titolo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Data = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.ArtistPFP = new MusicStory.CircleAvatar();
             this.background = new MusicStory.CardComponents();
             this.Biography = new System.Windows.Forms.WebBrowser();
@@ -152,15 +158,6 @@
             this.panel5.Size = new System.Drawing.Size(512, 274);
             this.panel5.TabIndex = 6;
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.Voto);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 193);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(512, 81);
-            this.panel6.TabIndex = 1;
-            // 
             // Albums
             // 
             this.Albums.AutoScroll = true;
@@ -168,17 +165,94 @@
             this.Albums.Location = new System.Drawing.Point(0, 0);
             this.Albums.Name = "Albums";
             this.Albums.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Albums.Size = new System.Drawing.Size(512, 216);
+            this.Albums.Size = new System.Drawing.Size(512, 207);
             this.Albums.TabIndex = 0;
             // 
             // Voto
             // 
             this.Voto.AutoSize = true;
-            this.Voto.Location = new System.Drawing.Point(12, 52);
+            this.Voto.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Voto.Location = new System.Drawing.Point(9, 40);
             this.Voto.Name = "Voto";
-            this.Voto.Size = new System.Drawing.Size(82, 17);
+            this.Voto.Size = new System.Drawing.Size(116, 24);
             this.Voto.TabIndex = 0;
             this.Voto.Text = "Valutazione";
+            // 
+            // valVoto
+            // 
+            this.valVoto.AutoSize = true;
+            this.valVoto.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valVoto.Location = new System.Drawing.Point(131, 40);
+            this.valVoto.Name = "valVoto";
+            this.valVoto.Size = new System.Drawing.Size(15, 24);
+            this.valVoto.TabIndex = 1;
+            this.valVoto.Text = " ";
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.Data);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Controls.Add(this.Titolo);
+            this.panel6.Controls.Add(this.label4);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Controls.Add(this.valVoto);
+            this.panel6.Controls.Add(this.Voto);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 207);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(512, 67);
+            this.panel6.TabIndex = 1;
+            // 
+            // Titolo
+            // 
+            this.Titolo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Titolo.AutoSize = true;
+            this.Titolo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titolo.Location = new System.Drawing.Point(77, 6);
+            this.Titolo.Name = "Titolo";
+            this.Titolo.Size = new System.Drawing.Size(15, 24);
+            this.Titolo.TabIndex = 5;
+            this.Titolo.Text = " ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(9, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 24);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Titolo";
+            // 
+            // Data
+            // 
+            this.Data.AutoSize = true;
+            this.Data.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Data.Location = new System.Drawing.Point(434, 24);
+            this.Data.Name = "Data";
+            this.Data.Size = new System.Drawing.Size(15, 24);
+            this.Data.TabIndex = 7;
+            this.Data.Text = " ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(292, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 24);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Pubblicazione";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(98, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 24);
+            this.label1.TabIndex = 3;
+            this.label1.Text = " ";
             // 
             // ArtistPFP
             // 
@@ -312,9 +386,15 @@
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.WebBrowser Biography;
         public System.Windows.Forms.FlowLayoutPanel Albums;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label Data;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label Titolo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label valVoto;
         private System.Windows.Forms.Label Voto;
     }
 }

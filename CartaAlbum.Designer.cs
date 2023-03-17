@@ -58,6 +58,7 @@
             this.cardComponents1.Name = "cardComponents1";
             this.cardComponents1.Size = new System.Drawing.Size(128, 55);
             this.cardComponents1.TabIndex = 1;
+            this.cardComponents1.Click += new System.EventHandler(this.cardComponents1_Click);
             // 
             // AlbumName
             // 
@@ -78,6 +79,7 @@
             this.Controls.Add(this.ImgAlbum);
             this.Name = "CartaAlbum";
             this.Size = new System.Drawing.Size(128, 179);
+            this.Click += new System.EventHandler(this.CartaAlbum_Click);
             ((System.ComponentModel.ISupportInitialize)(this.ImgAlbum)).EndInit();
             this.cardComponents1.ResumeLayout(false);
             this.cardComponents1.PerformLayout();

@@ -33,17 +33,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Warn = new System.Windows.Forms.Label();
             this.Bar = new System.Windows.Forms.Panel();
-            this.Search = new MusicStory.RJButton();
             this.Switch = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.Page = new System.Windows.Forms.Label();
-            this.Next = new MusicStory.RJButton();
-            this.Previous = new MusicStory.RJButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Results = new System.Windows.Forms.FlowLayoutPanel();
+            this.Next = new MusicStory.RJButton();
+            this.Previous = new MusicStory.RJButton();
+            this.Search = new MusicStory.RJButton();
             this.Bar.SuspendLayout();
             this.Switch.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +84,88 @@
             this.Bar.Size = new System.Drawing.Size(871, 88);
             this.Bar.TabIndex = 4;
             // 
+            // Switch
+            // 
+            this.Switch.Controls.Add(this.Next);
+            this.Switch.Controls.Add(this.Previous);
+            this.Switch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Switch.Location = new System.Drawing.Point(753, 0);
+            this.Switch.Name = "Switch";
+            this.Switch.Size = new System.Drawing.Size(118, 51);
+            this.Switch.TabIndex = 5;
+            // 
+            // Page
+            // 
+            this.Page.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Page.AutoSize = true;
+            this.Page.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Page.Location = new System.Drawing.Point(4, 14);
+            this.Page.Margin = new System.Windows.Forms.Padding(4);
+            this.Page.Name = "Page";
+            this.Page.Size = new System.Drawing.Size(15, 24);
+            this.Page.TabIndex = 0;
+            this.Page.Text = " ";
+            this.Page.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Page);
+            this.panel1.Controls.Add(this.Switch);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 470);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(871, 51);
+            this.panel1.TabIndex = 6;
+            // 
+            // Results
+            // 
+            this.Results.AutoScroll = true;
+            this.Results.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Results.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.Results.Location = new System.Drawing.Point(0, 88);
+            this.Results.Name = "Results";
+            this.Results.Padding = new System.Windows.Forms.Padding(5);
+            this.Results.Size = new System.Drawing.Size(871, 382);
+            this.Results.TabIndex = 7;
+            // 
+            // Next
+            // 
+            this.Next.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Next.BackgroundColor = System.Drawing.Color.LightSteelBlue;
+            this.Next.BorderColor = System.Drawing.Color.Empty;
+            this.Next.BorderRadius = 0;
+            this.Next.BorderSize = 0;
+            this.Next.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Next.FlatAppearance.BorderSize = 0;
+            this.Next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Next.ForeColor = System.Drawing.Color.White;
+            this.Next.Location = new System.Drawing.Point(58, 0);
+            this.Next.Name = "Next";
+            this.Next.Size = new System.Drawing.Size(60, 51);
+            this.Next.TabIndex = 1;
+            this.Next.TextColor = System.Drawing.Color.White;
+            this.Next.UseVisualStyleBackColor = false;
+            this.Next.Click += new System.EventHandler(this.Next_Click);
+            // 
+            // Previous
+            // 
+            this.Previous.BackColor = System.Drawing.Color.Ivory;
+            this.Previous.BackgroundColor = System.Drawing.Color.Ivory;
+            this.Previous.BorderColor = System.Drawing.Color.Empty;
+            this.Previous.BorderRadius = 0;
+            this.Previous.BorderSize = 0;
+            this.Previous.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Previous.FlatAppearance.BorderSize = 0;
+            this.Previous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Previous.ForeColor = System.Drawing.Color.Gainsboro;
+            this.Previous.Location = new System.Drawing.Point(0, 0);
+            this.Previous.Name = "Previous";
+            this.Previous.Size = new System.Drawing.Size(58, 51);
+            this.Previous.TabIndex = 0;
+            this.Previous.TextColor = System.Drawing.Color.Gainsboro;
+            this.Previous.UseVisualStyleBackColor = false;
+            this.Previous.Click += new System.EventHandler(this.Previous_Click);
+            // 
             // Search
             // 
             this.Search.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -107,95 +187,6 @@
             this.Search.UseVisualStyleBackColor = false;
             this.Search.Click += new System.EventHandler(this.Search_Click);
             // 
-            // Switch
-            // 
-            this.Switch.Controls.Add(this.panel2);
-            this.Switch.Controls.Add(this.Next);
-            this.Switch.Controls.Add(this.Previous);
-            this.Switch.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Switch.Location = new System.Drawing.Point(727, 0);
-            this.Switch.Name = "Switch";
-            this.Switch.Size = new System.Drawing.Size(144, 51);
-            this.Switch.TabIndex = 5;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.Page);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(58, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(26, 51);
-            this.panel2.TabIndex = 2;
-            // 
-            // Page
-            // 
-            this.Page.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Page.Location = new System.Drawing.Point(24, 14);
-            this.Page.Margin = new System.Windows.Forms.Padding(4);
-            this.Page.Name = "Page";
-            this.Page.Size = new System.Drawing.Size(39, 24);
-            this.Page.TabIndex = 0;
-            this.Page.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Next
-            // 
-            this.Next.BackColor = System.Drawing.SystemColors.Control;
-            this.Next.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.Next.BorderColor = System.Drawing.Color.Empty;
-            this.Next.BorderRadius = 0;
-            this.Next.BorderSize = 0;
-            this.Next.Dock = System.Windows.Forms.DockStyle.Right;
-            this.Next.FlatAppearance.BorderSize = 0;
-            this.Next.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Next.ForeColor = System.Drawing.Color.White;
-            this.Next.Location = new System.Drawing.Point(84, 0);
-            this.Next.Name = "Next";
-            this.Next.Size = new System.Drawing.Size(60, 51);
-            this.Next.TabIndex = 1;
-            this.Next.TextColor = System.Drawing.Color.White;
-            this.Next.UseVisualStyleBackColor = false;
-            this.Next.Click += new System.EventHandler(this.Next_Click);
-            // 
-            // Previous
-            // 
-            this.Previous.BackColor = System.Drawing.SystemColors.Control;
-            this.Previous.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.Previous.BorderColor = System.Drawing.Color.Empty;
-            this.Previous.BorderRadius = 0;
-            this.Previous.BorderSize = 0;
-            this.Previous.Dock = System.Windows.Forms.DockStyle.Left;
-            this.Previous.FlatAppearance.BorderSize = 0;
-            this.Previous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Previous.ForeColor = System.Drawing.Color.Gainsboro;
-            this.Previous.Location = new System.Drawing.Point(0, 0);
-            this.Previous.Name = "Previous";
-            this.Previous.Size = new System.Drawing.Size(58, 51);
-            this.Previous.TabIndex = 0;
-            this.Previous.TextColor = System.Drawing.Color.Gainsboro;
-            this.Previous.UseVisualStyleBackColor = false;
-            this.Previous.Click += new System.EventHandler(this.Previous_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.Switch);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 470);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(871, 51);
-            this.panel1.TabIndex = 6;
-            // 
-            // Results
-            // 
-            this.Results.AutoScroll = true;
-            this.Results.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Results.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.Results.Location = new System.Drawing.Point(0, 88);
-            this.Results.Name = "Results";
-            this.Results.Padding = new System.Windows.Forms.Padding(5);
-            this.Results.Size = new System.Drawing.Size(871, 382);
-            this.Results.TabIndex = 7;
-            // 
             // CercaArtista
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -209,13 +200,12 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CercaArtista";
             this.Text = "MusicStory";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Bar.ResumeLayout(false);
             this.Bar.PerformLayout();
             this.Switch.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,7 +223,6 @@
         private RJButton Previous;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel Results;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label Page;
     }
 }

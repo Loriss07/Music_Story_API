@@ -13,9 +13,10 @@ namespace MusicStory
     public partial class CartaAlbum : UserControl
     {
         private string album_name;
-        private string genere;
         private string album_id;
-        private int valutazione;
+        private string valutazione;
+        private DateTime data_Pubblicazione;
+
         public CartaAlbum()
         {
             InitializeComponent();
@@ -27,8 +28,19 @@ namespace MusicStory
                 AlbumName.Text = value;
             } 
         }
-        public string Genere { get => genere; set => genere = value; }
         public string Album_id { get => album_id; set { album_id = value; } }
-        public int Valutazione { get => valutazione; set => valutazione = value; }
+
+        public string Valutazione { get => valutazione; set => valutazione = value; }
+        public DateTime Data_Pubblicazione { get => data_Pubblicazione; set => data_Pubblicazione = value; }
+
+        private void cardComponents1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CartaAlbum_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

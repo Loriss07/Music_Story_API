@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Text.Encodings;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,7 +20,7 @@ namespace MusicStory
             ID = Artist_ID;
             Artist_Name.Text = ArtistName;
             LoadSocial();
-            LoadBiography();
+            //LoadBiography();
             SetImage();
             Album();
         }
@@ -77,6 +78,9 @@ namespace MusicStory
                     CartaAlbum album = new CartaAlbum();
                     album.Album_name = Risposta.data[i].title;
                     album.Album_id = Risposta.data[i].id;
+                    album.Data_Pubblicazione = DateTime.Parse(Risposta.data[i].release_date);
+                    album.Click += Album_Click;
+                    album.Valutazione = await client.GetReview(album.Album_id);
                     string recording_ID = await client.GetRelease(album.Album_id);
                     int img = await client.GetImage(recording_ID, "release");
 
@@ -90,8 +94,18 @@ namespace MusicStory
 
                     }
                     Albums.Controls.Add(album);
+                    
                 }
             }
+        }
+
+        private async void Album_Click(object sender, EventArgs e)
+        {
+            CartaAlbum album = sender as CartaAlbum;
+            Titolo.Text = album.Album_name;
+            Data.Text = album.Data_Pubblicazione.ToShortDateString();
+            valVoto.Text = album.Valutazione + '\u2B50';
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

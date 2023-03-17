@@ -33,9 +33,14 @@ namespace MusicStory
         public MusicStoryClient(string destURL,string consumerKey, string consumerSecret, string accessToken, string tokenSecret)
         {
             URL = destURL;
-            http = new RestClient(URL);
-            http.Authenticator = OAuth1Authenticator.ForAccessToken(consumerKey, consumerSecret, accessToken, 
+            //http = new RestClient(URL);
+            RestClientOptions clientOptions = new RestClientOptions();
+            clientOptions.Authenticator = OAuth1Authenticator.ForAccessToken(consumerKey, consumerSecret, accessToken,
                             tokenSecret, OAuthSignatureMethod.HmacSha1);
+            clientOptions.BaseUrl = new Uri(URL);
+            http = new RestClient(clientOptions);
+            //http.Authenticator = OAuth1Authenticator.ForAccessToken(consumerKey, consumerSecret, accessToken, 
+            //   tokenSecret, OAuthSignatureMethod.HmacSha1);
         }
         public async Task<root> NextArtists(string artistName)
         {
@@ -89,13 +94,16 @@ namespace MusicStory
             AlbumResponse = await GetResponse(subURL);
             return AlbumResponse.data[0].id;
         }
-        public async Task<int[]> GetReview(string album_ID)
+        public async Task<string> GetReview(string album_ID)
         {
-            int[] review = new int[2];
+            string review = "";
             string subURL = $"/album/{album_ID}/reviews";
             AlbumResponse = await GetResponse(subURL);
-            review[0] = AlbumResponse.data[0].rate;
-            review[1] = AlbumResponse.data[1].max_rate;
+            if (AlbumResponse.data.Count() > 0)
+            {
+                review = $"{AlbumResponse.data[0].rate}/{AlbumResponse.data[0].max_rate}";
+            }
+            
             return review;
         }
         public async Task<int> GetImage(string ID,string type)
