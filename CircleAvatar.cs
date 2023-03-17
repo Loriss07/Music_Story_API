@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MusicStory
@@ -26,13 +20,14 @@ namespace MusicStory
             Size = new Size(120, 120);
             InitializeComponent();
         }
-        public int BorderSize 
-        { 
+        public int BorderSize
+        {
             get => borderSize;
-            set { 
+            set
+            {
                 borderSize = value;
                 this.Invalidate();
-            }  
+            }
         }
         public int BorderRadius
         {
@@ -85,10 +80,10 @@ namespace MusicStory
             var rectBorder = Rectangle.Inflate(rectSmooth, -borderSize, -borderSize);
             var SmoothSize = borderSize > 0 ? borderSize * 3 : 1;
 
-            using(var borderGradientColor = new LinearGradientBrush(rectBorder,borderGradientTop,borderGradientBottom, gradientAngle))
-            using(var pathRegion = new GraphicsPath())
-            using(var penSmooth = new Pen(Parent.BackColor, SmoothSize))
-            using(var penBorder = new Pen(borderGradientColor,SmoothSize))
+            using (var borderGradientColor = new LinearGradientBrush(rectBorder, borderGradientTop, borderGradientBottom, gradientAngle))
+            using (var pathRegion = new GraphicsPath())
+            using (var penSmooth = new Pen(Parent.BackColor, SmoothSize))
+            using (var penBorder = new Pen(borderGradientColor, SmoothSize))
             {
                 pathRegion.AddEllipse(rectSmooth);
                 Region = new Region(pathRegion);

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MusicStory
@@ -25,33 +18,38 @@ namespace MusicStory
             InitializeComponent();
         }
 
-        public int BorderRadius 
+        public int BorderRadius
         {
             get => borderRadius;
-            set { borderRadius = value;
+            set
+            {
+                borderRadius = value;
                 this.Invalidate();
             }
         }
-        public float GradientAngle 
-        { 
+        public float GradientAngle
+        {
             get => gradientAngle;
-            set { 
+            set
+            {
                 gradientAngle = value;
                 this.Invalidate();
-            }  
+            }
         }
-        public Color GradientTopColor 
-        { 
+        public Color GradientTopColor
+        {
             get => gradientTopColor;
-            set {
+            set
+            {
                 gradientTopColor = value;
                 this.Invalidate();
-            }  
+            }
         }
-        public Color GradientBottomColor 
-        { 
+        public Color GradientBottomColor
+        {
             get => gradientBottomColor;
-            set {
+            set
+            {
                 gradientBottomColor = value;
                 this.Invalidate();
             }
@@ -81,11 +79,11 @@ namespace MusicStory
             graphicsCard.FillRectangle(brush, ClientRectangle);
 
             //BorderRadius
-            RectangleF rect = new RectangleF(0,0, this.Width, this.Height);
+            RectangleF rect = new RectangleF(0, 0, this.Width, this.Height);
             if (borderRadius > 2)
             {
                 using (GraphicsPath path = GetPath(rect, borderRadius))
-                using (Pen pen = new Pen(this.Parent.BackColor, 2)) 
+                using (Pen pen = new Pen(this.Parent.BackColor, 2))
                 {
                     this.Region = new Region(path);
                     e.Graphics.DrawPath(pen, path);
@@ -97,6 +95,6 @@ namespace MusicStory
                 this.Region = new Region(rect);
             }
         }
-       
+
     }
 }

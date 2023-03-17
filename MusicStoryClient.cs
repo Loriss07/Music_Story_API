@@ -30,17 +30,14 @@ namespace MusicStory
             URL = destURL;
             http = new RestClient(URL);
         }
-        public MusicStoryClient(string destURL,string consumerKey, string consumerSecret, string accessToken, string tokenSecret)
+        public MusicStoryClient(string destURL, string consumerKey, string consumerSecret, string accessToken, string tokenSecret)
         {
             URL = destURL;
-            //http = new RestClient(URL);
-            RestClientOptions clientOptions = new RestClientOptions();
+            RestClientOptions clientOptions = new RestClientOptions(); //Aggiornamento di RestSarp
             clientOptions.Authenticator = OAuth1Authenticator.ForAccessToken(consumerKey, consumerSecret, accessToken,
                             tokenSecret, OAuthSignatureMethod.HmacSha1);
             clientOptions.BaseUrl = new Uri(URL);
             http = new RestClient(clientOptions);
-            //http.Authenticator = OAuth1Authenticator.ForAccessToken(consumerKey, consumerSecret, accessToken, 
-            //   tokenSecret, OAuthSignatureMethod.HmacSha1);
         }
         public async Task<root> NextArtists(string artistName)
         {
@@ -82,14 +79,14 @@ namespace MusicStory
         }
         public async Task<root> GetArtist(string artistName)
         {
-            
+
             string subURL = "/artist/search?name=" + artistName;
             Response = await GetResponse(subURL);
             return Response;
         }
         public async Task<string> GetRelease(string album_ID)
         {
-            
+
             string subURL = $"/album/{album_ID}/releases";
             AlbumResponse = await GetResponse(subURL);
             return AlbumResponse.data[0].id;
@@ -103,10 +100,10 @@ namespace MusicStory
             {
                 review = $"{AlbumResponse.data[0].rate}/{AlbumResponse.data[0].max_rate}";
             }
-            
+
             return review;
         }
-        public async Task<int> GetImage(string ID,string type)
+        public async Task<int> GetImage(string ID, string type)
         {
             int success = -1;
             string subURL = $"/{type}/{ID}/pictures";
@@ -130,7 +127,7 @@ namespace MusicStory
                     success = 1;
                 }
             }
-            return success; 
+            return success;
         }
         public async Task<root> GetAlbums(string artist_ID)
         {
@@ -139,7 +136,7 @@ namespace MusicStory
 
             return AlbumResponse;
         }
-        public async Task<root> GetLink(string artist_ID,string social)
+        public async Task<root> GetLink(string artist_ID, string social)
         {
             string subURL = $"/artist/{artist_ID}/{social}"; //Serve a restituire SOLO gli Album (no singoli, no EP...)
             LinkResponse = await GetResponse(subURL);
@@ -174,7 +171,7 @@ namespace MusicStory
             catch (Exception ex)
             {
                 result = null;
-                
+
             }
 
             return result;

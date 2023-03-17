@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MusicStory
 {
@@ -104,160 +100,160 @@ namespace MusicStory
 
         /// <remarks/>
         public string id
+        {
+            get
             {
-                get
-                {
-                    return this.idField;
-                }
-                set
-                {
-                    this.idField = value;
-                }
+                return this.idField;
             }
-
-            /// <remarks/>
-            public uint id_source
+            set
             {
-                get
-                {
-                    return this.id_sourceField;
-                }
-                set
-                {
-                    this.id_sourceField = value;
-                }
+                this.idField = value;
             }
+        }
 
-            /// <remarks/>
-            public string source
+        /// <remarks/>
+        public uint id_source
+        {
+            get
             {
-                get
-                {
-                    return this.sourceField;
-                }
-                set
-                {
-                    this.sourceField = value;
-                }
+                return this.id_sourceField;
             }
-
-
-            /// <remarks/>
-            public ushort height
+            set
             {
-                get
-                {
-                    return this.heightField;
-                }
-                set
-                {
-                    this.heightField = value;
-                }
+                this.id_sourceField = value;
             }
+        }
 
-            /// <remarks/>
-            public string url
+        /// <remarks/>
+        public string source
+        {
+            get
             {
-                get
-                {
-                    return this.urlField;
-                }
-                set
-                {
-                    this.urlField = value;
-                }
+                return this.sourceField;
             }
+            set
+            {
+                this.sourceField = value;
+            }
+        }
 
-            /// <remarks/>
-            public string url_400
-            {
-                get
-                {
-                    return this.url_400Field;
-                }
-                set
-                {
-                    this.url_400Field = value;
-                }
-            }
 
-            /// <remarks/>
-            public object mime_type
+        /// <remarks/>
+        public ushort height
+        {
+            get
             {
-                get
-                {
-                    return this.mime_typeField;
-                }
-                set
-                {
-                    this.mime_typeField = value;
-                }
+                return this.heightField;
             }
+            set
+            {
+                this.heightField = value;
+            }
+        }
 
-            /// <remarks/>
-            public object copyright
+        /// <remarks/>
+        public string url
+        {
+            get
             {
-                get
-                {
-                    return this.copyrightField;
-                }
-                set
-                {
-                    this.copyrightField = value;
-                }
+                return this.urlField;
             }
+            set
+            {
+                this.urlField = value;
+            }
+        }
 
-            /// <remarks/>
-            public object licence
+        /// <remarks/>
+        public string url_400
+        {
+            get
             {
-                get
-                {
-                    return this.licenceField;
-                }
-                set
-                {
-                    this.licenceField = value;
-                }
+                return this.url_400Field;
             }
+            set
+            {
+                this.url_400Field = value;
+            }
+        }
 
-            /// <remarks/>
-            public string update_date
+        /// <remarks/>
+        public object mime_type
+        {
+            get
             {
-                get
-                {
-                    return this.update_dateField;
-                }
-                set
-                {
-                    this.update_dateField = value;
-                }
+                return this.mime_typeField;
             }
+            set
+            {
+                this.mime_typeField = value;
+            }
+        }
 
-            /// <remarks/>
-            public string creation_date
+        /// <remarks/>
+        public object copyright
+        {
+            get
             {
-                get
-                {
-                    return this.creation_dateField;
-                }
-                set
-                {
-                    this.creation_dateField = value;
-                }
+                return this.copyrightField;
             }
+            set
+            {
+                this.copyrightField = value;
+            }
+        }
 
-            /// <remarks/>
-            public byte main
+        /// <remarks/>
+        public object licence
+        {
+            get
             {
-                get
-                {
-                    return this.mainField;
-                }
-                set
-                {
-                    this.mainField = value;
-                }
+                return this.licenceField;
             }
+            set
+            {
+                this.licenceField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string update_date
+        {
+            get
+            {
+                return this.update_dateField;
+            }
+            set
+            {
+                this.update_dateField = value;
+            }
+        }
+
+        /// <remarks/>
+        public string creation_date
+        {
+            get
+            {
+                return this.creation_dateField;
+            }
+            set
+            {
+                this.creation_dateField = value;
+            }
+        }
+
+        /// <remarks/>
+        public byte main
+        {
+            get
+            {
+                return this.mainField;
+            }
+            set
+            {
+                this.mainField = value;
+            }
+        }
 
         /// <remarks/>
         public string name
@@ -358,7 +354,7 @@ namespace MusicStory
         public string label { get => labelField; set => labelField = value; }
         public object distributor { get => distributorField; set => distributorField = value; }
         public string format { get => formatField; set => formatField = value; }
-        public string release_date { get => release_dateField; set { release_dateField = value; }  }
+        public string release_date { get => release_dateField; set { release_dateField = value; } }
         public object link { get => linkField; set => linkField = value; }
         public string header { get => headerField; set => headerField = value; }
         public object linked_header { get => linked_headerField; set => linked_headerField = value; }

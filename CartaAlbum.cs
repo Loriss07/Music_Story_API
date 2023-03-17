@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MusicStory
@@ -22,11 +15,13 @@ namespace MusicStory
             InitializeComponent();
         }
 
-        public string Album_name { get => album_name; set 
-            { 
-                album_name = value; 
+        public string Album_name
+        {
+            get => album_name; set
+            {
+                album_name = value;
                 AlbumName.Text = value;
-            } 
+            }
         }
         public string Album_id { get => album_id; set { album_id = value; } }
 

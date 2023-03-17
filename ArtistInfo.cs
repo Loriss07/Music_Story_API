@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text.Encodings;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,7 +12,7 @@ namespace MusicStory
         private MusicStoryClient client;
         private FileStream ArtistImage;
         private string ID;
-        internal ArtistInfo(string Artist_ID,string ArtistName, MusicStoryClient Client)
+        internal ArtistInfo(string Artist_ID, string ArtistName, MusicStoryClient Client)
         {
             InitializeComponent();
             client = Client;
@@ -28,14 +27,14 @@ namespace MusicStory
         private async void LoadBiography()
         {
             root bio = await client.GetBiography(ID);
-            
+
             for (int i = 0; i < bio.data.Count(); i++)
             {
                 if (bio.data[i].lang == "EN")
                     Biography.DocumentText = bio.data[i].header;
             }
-                
-                
+
+
         }
 
         private async void LoadSocial()
@@ -60,13 +59,13 @@ namespace MusicStory
 
         private void SetImage()
         {
-            using(ArtistImage = System.IO.File.Open($"./img/artist/img{ID}.png",
+            using (ArtistImage = System.IO.File.Open($"./img/artist/img{ID}.png",
                 System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.ReadWrite))
             {
                 ArtistPFP.Image = new Bitmap(ArtistImage);
                 ArtistImage.Close();
             }
-            
+
         }
         private async void Album()
         {
@@ -94,7 +93,7 @@ namespace MusicStory
 
                     }
                     Albums.Controls.Add(album);
-                    
+
                 }
             }
         }
@@ -105,7 +104,7 @@ namespace MusicStory
             Titolo.Text = album.Album_name;
             Data.Text = album.Data_Pubblicazione.ToShortDateString();
             valVoto.Text = album.Valutazione + '\u2B50';
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
