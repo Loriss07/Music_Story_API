@@ -31,7 +31,7 @@ namespace MusicStory
 
         private void InfoCarta_Click(object sender, EventArgs e)
         {
-            ArtistInfo f = new ArtistInfo(ArtistID, nome, Form1.Client);
+            ArtistInfo f = new ArtistInfo(ArtistID, nome, CercaArtista.Client);
             f.Show();
         }
 

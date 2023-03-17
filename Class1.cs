@@ -9,142 +9,45 @@ namespace MusicStory
     internal class Class1
     {
 
+
         // NOTA: con il codice generato potrebbe essere richiesto almeno .NET Framework 4.5 o .NET Core/Standard 2.0.
         /// <remarks/>
         [System.SerializableAttribute()]
         [System.ComponentModel.DesignerCategoryAttribute("code")]
         [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
         [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-        public partial class root
+        public partial class item
         {
 
-            private decimal versionField;
+            private itemLink linkField;
 
-            private byte codeField;
+            private byte idField;
 
-            private byte countField;
+            private string nameField;
 
-            private byte pageCountField;
+            private string urlField;
 
-            private byte currentPageField;
+            private byte mainField;
 
-            private rootItem[] dataField;
+            private string update_dateField;
+
+            private string creation_dateField;
 
             /// <remarks/>
-            public decimal version
+            public itemLink link
             {
                 get
                 {
-                    return this.versionField;
+                    return this.linkField;
                 }
                 set
                 {
-                    this.versionField = value;
+                    this.linkField = value;
                 }
             }
 
             /// <remarks/>
-            public byte code
-            {
-                get
-                {
-                    return this.codeField;
-                }
-                set
-                {
-                    this.codeField = value;
-                }
-            }
-
-            /// <remarks/>
-            public byte count
-            {
-                get
-                {
-                    return this.countField;
-                }
-                set
-                {
-                    this.countField = value;
-                }
-            }
-
-            /// <remarks/>
-            public byte pageCount
-            {
-                get
-                {
-                    return this.pageCountField;
-                }
-                set
-                {
-                    this.pageCountField = value;
-                }
-            }
-
-            /// <remarks/>
-            public byte currentPage
-            {
-                get
-                {
-                    return this.currentPageField;
-                }
-                set
-                {
-                    this.currentPageField = value;
-                }
-            }
-
-            /// <remarks/>
-            [System.Xml.Serialization.XmlArrayItemAttribute("item", IsNullable = false)]
-            public rootItem[] data
-            {
-                get
-                {
-                    return this.dataField;
-                }
-                set
-                {
-                    this.dataField = value;
-                }
-            }
-        }
-
-        /// <remarks/>
-        [System.SerializableAttribute()]
-        [System.ComponentModel.DesignerCategoryAttribute("code")]
-        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-        public partial class rootItem
-        {
-
-            private uint idField;
-
-            private string headerField;
-
-            private object linked_headerField;
-
-            private string contentField;
-
-            private object linked_contentField;
-
-            private object authorField;
-
-            private string langField;
-
-            private string sourceField;
-
-            private object copyrightField;
-
-            private string licenceField;
-
-            private object update_dateField;
-
-            private object creation_dateField;
-
-            private string linkField;
-
-            /// <remarks/>
-            public uint id
+            public byte id
             {
                 get
                 {
@@ -157,124 +60,46 @@ namespace MusicStory
             }
 
             /// <remarks/>
-            public string header
+            public string name
             {
                 get
                 {
-                    return this.headerField;
+                    return this.nameField;
                 }
                 set
                 {
-                    this.headerField = value;
+                    this.nameField = value;
                 }
             }
 
             /// <remarks/>
-            public object linked_header
+            public string url
             {
                 get
                 {
-                    return this.linked_headerField;
+                    return this.urlField;
                 }
                 set
                 {
-                    this.linked_headerField = value;
+                    this.urlField = value;
                 }
             }
 
             /// <remarks/>
-            public string content
+            public byte main
             {
                 get
                 {
-                    return this.contentField;
+                    return this.mainField;
                 }
                 set
                 {
-                    this.contentField = value;
+                    this.mainField = value;
                 }
             }
 
             /// <remarks/>
-            public object linked_content
-            {
-                get
-                {
-                    return this.linked_contentField;
-                }
-                set
-                {
-                    this.linked_contentField = value;
-                }
-            }
-
-            /// <remarks/>
-            public object author
-            {
-                get
-                {
-                    return this.authorField;
-                }
-                set
-                {
-                    this.authorField = value;
-                }
-            }
-
-            /// <remarks/>
-            public string lang
-            {
-                get
-                {
-                    return this.langField;
-                }
-                set
-                {
-                    this.langField = value;
-                }
-            }
-
-            /// <remarks/>
-            public string source
-            {
-                get
-                {
-                    return this.sourceField;
-                }
-                set
-                {
-                    this.sourceField = value;
-                }
-            }
-
-            /// <remarks/>
-            public object copyright
-            {
-                get
-                {
-                    return this.copyrightField;
-                }
-                set
-                {
-                    this.copyrightField = value;
-                }
-            }
-
-            /// <remarks/>
-            public string licence
-            {
-                get
-                {
-                    return this.licenceField;
-                }
-                set
-                {
-                    this.licenceField = value;
-                }
-            }
-
-            /// <remarks/>
-            public object update_date
+            public string update_date
             {
                 get
                 {
@@ -287,7 +112,7 @@ namespace MusicStory
             }
 
             /// <remarks/>
-            public object creation_date
+            public string creation_date
             {
                 get
                 {
@@ -298,20 +123,32 @@ namespace MusicStory
                     this.creation_dateField = value;
                 }
             }
+        }
+
+        /// <remarks/>
+        [System.SerializableAttribute()]
+        [System.ComponentModel.DesignerCategoryAttribute("code")]
+        [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+        public partial class itemLink
+        {
+
+            private string itemField;
 
             /// <remarks/>
-            public string link
+            public string item
             {
                 get
                 {
-                    return this.linkField;
+                    return this.itemField;
                 }
                 set
                 {
-                    this.linkField = value;
+                    this.itemField = value;
                 }
             }
         }
+
+
 
 
     }

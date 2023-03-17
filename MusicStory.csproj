@@ -162,9 +162,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Back.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Properties\icon\left-arrow.png" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +178,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\icon\twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

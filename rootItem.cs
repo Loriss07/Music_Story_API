@@ -28,6 +28,33 @@ namespace MusicStory
         }
     }
 
+    // NOTA: con il codice generato potrebbe essere richiesto almeno .NET Framework 4.5 o .NET Core/Standard 2.0.
+    /// <remarks/>
+    [System.SerializableAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
+    [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
+    public partial class link
+    {
+
+        private string itemField;
+
+        /// <remarks/>
+        public string item
+        {
+            get
+            {
+                return this.itemField;
+            }
+            set
+            {
+                this.itemField = value;
+            }
+        }
+    }
+
+
+
     [SerializableAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
@@ -44,7 +71,6 @@ namespace MusicStory
         private byte coeff_actuField;
         private string update_dateField;
         private string creation_dateField;
-        
         private uint id_sourceField;
         private string sourceField;
         private ushort widthField;
@@ -60,13 +86,15 @@ namespace MusicStory
         private object distributorField;
         private string formatField;
         private string release_dateField;
-        private string linkField;
+        private object linkField;
         private string headerField;
         private object linked_headerField;
         private string contentField;
         private object linked_contentField;
         private object authorField;
         private string langField;
+        private link linkItemField;
+
 
 
         /// <remarks/>
@@ -326,7 +354,7 @@ namespace MusicStory
         public object distributor { get => distributorField; set => distributorField = value; }
         public string format { get => formatField; set => formatField = value; }
         public string release_date { get => release_dateField; set { release_dateField = value; }  }
-        public string link { get => linkField; set => linkField = value; }
+        public object link { get => linkField; set => linkField = value; }
         public string header { get => headerField; set => headerField = value; }
         public object linked_header { get => linked_headerField; set => linked_headerField = value; }
         public string content { get => contentField; set => contentField = value; }

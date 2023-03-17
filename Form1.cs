@@ -1,26 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Http;
 using System.Windows.Forms;
 
 namespace MusicStory
 {
-    public partial class Form1 : Form
+    public partial class CercaArtista : Form
     {
         public static MusicStoryClient Client;
         private List<CartaArtista> Result_List;
         private string nome;
-        private string artistID;
 
 
-        public Form1()
+        public CercaArtista()
         {
             Result_List = new List<CartaArtista>();
             string ConsumerKey = "a406b97e8c4536f215d8610e5aed3e36c0825cca";
@@ -43,9 +36,19 @@ namespace MusicStory
                 Search.BorderColor = Color.CornflowerBlue;
                 Search.BackColor = Color.LightSteelBlue;
 
-                root Risposta = await Client.GetArtist(SearchBar.Text);
+                try
+                {
 
-                Mostra(Risposta);
+                    root Risposta = await Client.GetArtist(SearchBar.Text);
+                    Mostra(Risposta);
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Errore! Magari non sei connesso ad Internet...\n" + ex.Message);
+                }
+
+                
                 
             }
             else
@@ -57,17 +60,6 @@ namespace MusicStory
             
         }
 
-        private void Carta_Click(object sender, MouseEventArgs e)
-        {
-            
-            /*
-            Carta artist = sender as Carta;
-            artistID = artist.ArtistID;
-            ArtistInfo f = new ArtistInfo(artist.ArtistID, nome, ref Client);
-            f.Show();*/
-            //throw new NotImplementedException();
-
-        }
         private void Pulisci()
         {
             if (Result_List.Count != 0)
@@ -144,11 +136,11 @@ namespace MusicStory
                 carta.Nome = Risposta.data[i].name;
                 carta.ArtistID = Risposta.data[i].id;
                 Page.Text = Convert.ToString(Risposta.currentPage);
-                int img = await Client.GetImage(carta.ArtistID);
+                int img = await Client.GetImage(carta.ArtistID,"artist");
 
                 if (img == 1)
                 {
-                    using (FileStream image = File.Open($"./img/img{carta.ArtistID}.png", FileMode.Open, FileAccess.Read, FileShare.Read))
+                    using (FileStream image = File.Open($"./img/artist/img{carta.ArtistID}.png", FileMode.Open, FileAccess.Read, FileShare.Read))
                     {
                         carta.ImgArtista.Image = new Bitmap(image);
                         image.Close();

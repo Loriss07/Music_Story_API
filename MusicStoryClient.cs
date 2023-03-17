@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel;
-using System.Drawing;
-using System.Threading.Tasks;
-using System.Net;
-using System.IO;
-using RestSharp;
-using RestSharp.Extensions;
+﻿using RestSharp;
 using RestSharp.Authenticators;
 using RestSharp.Authenticators.OAuth;
 using RestSharp.Serializers.Xml;
+using System;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 
 namespace MusicStory
 {
@@ -23,6 +18,7 @@ namespace MusicStory
         private root ImgResponse;
         private root AlbumResponse;
         private root LinkResponse;
+        private root GenreResponse;
         private root BioResponse;
         public MusicStoryClient()
         {
@@ -86,24 +82,37 @@ namespace MusicStory
             Response = await GetResponse(subURL);
             return Response;
         }
-        public async Task<int> GetImage(string artist_ID)
+        public async Task<string> GetRelease(string album_ID)
         {
-            int success;
-            string subURL = $"/artist/{artist_ID}/pictures";
+            
+            string subURL = $"/album/{album_ID}/releases";
+            AlbumResponse = await GetResponse(subURL);
+            return AlbumResponse.data[0].id;
+        }
+        public async Task<int> GetImage(string ID,string type)
+        {
+            int success = -1;
+            string subURL = $"/{type}/{ID}/pictures";
             ImgResponse = await GetResponse(subURL);
-            if (ImgResponse.data.Count() != 0)
+            if (ImgResponse != null)
             {
-                RestRequest request = new RestRequest(ImgResponse.data[0].url, Method.Get);
-
-                using (var file = File.Create($"./img/img{artist_ID}.png"))
-                using (BinaryWriter image = new BinaryWriter(file))
+                if (ImgResponse.data.Count() != 0)
                 {
-                    image.Write(http.DownloadData(request));
+                    RestRequest request = new RestRequest(ImgResponse.data[0].url, Method.Get);
+
+                    string path = $"./img/{type}";
+
+                    if (!Directory.Exists(path))
+                        Directory.CreateDirectory(path);
+
+                    using (var file = File.Create($"{path}/img{ID}.png"))
+                    using (BinaryWriter image = new BinaryWriter(file))
+                    {
+                        image.Write(http.DownloadData(request));
+                    }
+                    success = 1;
                 }
-                success = 1;
             }
-            else
-                success = -1;
             return success; 
         }
         public async Task<root> GetAlbums(string artist_ID)
@@ -125,6 +134,13 @@ namespace MusicStory
             string subURL = $"artist/{artistID}/biographies";
             BioResponse = await GetResponse(subURL);
             return BioResponse;
+        }
+        public async Task<string> GetGenre(string artist_ID)
+        {
+            string subURL = $"/artist/{artist_ID}/genres"; //Serve a restituire SOLO gli Album (no singoli, no EP...)
+            GenreResponse = await GetResponse(subURL);
+
+            return GenreResponse.data[0].name;
         }
         private async Task<root> GetResponse(string subURL)
         {

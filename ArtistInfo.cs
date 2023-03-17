@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,7 +19,7 @@ namespace MusicStory
             ID = Artist_ID;
             Artist_Name.Text = ArtistName;
             LoadSocial();
-            LoadBiography();
+            //LoadBiography();
             SetImage();
             Album();
         }
@@ -50,6 +45,7 @@ namespace MusicStory
             Youtube.Tag = await Social("youtubechannel");
             Twitter.Tag = await Social("twitter");
             Instagram.Tag = await Social("instagram");
+            Genre.Text = await client.GetGenre(ID);
         }
         private async Task<string> Social(string social)
         {
@@ -63,7 +59,7 @@ namespace MusicStory
 
         private void SetImage()
         {
-            using(ArtistImage = System.IO.File.Open($"./img/img{ID}.png",
+            using(ArtistImage = System.IO.File.Open($"./img/artist/img{ID}.png",
                 System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.ReadWrite))
             {
                 ArtistPFP.Image = new Bitmap(ArtistImage);
@@ -81,12 +77,19 @@ namespace MusicStory
                     CartaAlbum album = new CartaAlbum();
                     album.Album_name = Risposta.data[i].title;
                     album.Album_id = Risposta.data[i].id;
+                    string recording_ID = await client.GetRelease(album.Album_id);
+                    int img = await client.GetImage(recording_ID, "release");
 
+                    if (img == 1)
+                    {
+                        using (FileStream image = File.Open($"./img/release/img{recording_ID}.png", FileMode.Open, FileAccess.Read, FileShare.Read))
+                        {
+                            album.ImgAlbum.Image = new Bitmap(image);
+                            image.Close();
+                        }
+
+                    }
                     Albums.Controls.Add(album);
-                }
-                foreach (var album in Risposta.data)
-                {
-                    MessageBox.Show(album.title);
                 }
             }
         }

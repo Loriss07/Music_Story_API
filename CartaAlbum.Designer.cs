@@ -30,7 +30,9 @@
         {
             this.ImgAlbum = new System.Windows.Forms.PictureBox();
             this.cardComponents1 = new MusicStory.CardComponents();
+            this.AlbumName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ImgAlbum)).BeginInit();
+            this.cardComponents1.SuspendLayout();
             this.SuspendLayout();
             // 
             // ImgAlbum
@@ -38,6 +40,7 @@
             this.ImgAlbum.Location = new System.Drawing.Point(0, 0);
             this.ImgAlbum.Name = "ImgAlbum";
             this.ImgAlbum.Size = new System.Drawing.Size(125, 125);
+            this.ImgAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImgAlbum.TabIndex = 0;
             this.ImgAlbum.TabStop = false;
             // 
@@ -45,6 +48,7 @@
             // 
             this.cardComponents1.BackColor = System.Drawing.Color.White;
             this.cardComponents1.BorderRadius = 20;
+            this.cardComponents1.Controls.Add(this.AlbumName);
             this.cardComponents1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cardComponents1.ForeColor = System.Drawing.Color.Black;
             this.cardComponents1.GradientAngle = 90F;
@@ -52,26 +56,38 @@
             this.cardComponents1.GradientTopColor = System.Drawing.Color.Transparent;
             this.cardComponents1.Location = new System.Drawing.Point(0, 124);
             this.cardComponents1.Name = "cardComponents1";
-            this.cardComponents1.Size = new System.Drawing.Size(125, 55);
+            this.cardComponents1.Size = new System.Drawing.Size(128, 55);
             this.cardComponents1.TabIndex = 1;
+            // 
+            // AlbumName
+            // 
+            this.AlbumName.AutoSize = true;
+            this.AlbumName.Font = new System.Drawing.Font("Bahnschrift SemiLight", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlbumName.Location = new System.Drawing.Point(3, 0);
+            this.AlbumName.Name = "AlbumName";
+            this.AlbumName.Size = new System.Drawing.Size(56, 22);
+            this.AlbumName.TabIndex = 0;
+            this.AlbumName.Text = "label1";
             // 
             // CartaAlbum
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Turquoise;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.cardComponents1);
             this.Controls.Add(this.ImgAlbum);
             this.Name = "CartaAlbum";
-            this.Size = new System.Drawing.Size(125, 179);
+            this.Size = new System.Drawing.Size(128, 179);
             ((System.ComponentModel.ISupportInitialize)(this.ImgAlbum)).EndInit();
+            this.cardComponents1.ResumeLayout(false);
+            this.cardComponents1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox ImgAlbum;
         private CardComponents cardComponents1;
+        private System.Windows.Forms.Label AlbumName;
+        public System.Windows.Forms.PictureBox ImgAlbum;
     }
 }
