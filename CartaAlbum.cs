@@ -13,6 +13,10 @@ namespace MusicStory
         public CartaAlbum()
         {
             InitializeComponent();
+            foreach (Control c in Controls)
+            {
+                c.Click += (sender, e) => { OnClick(e); };
+            }
         }
 
         public string Album_name
@@ -23,24 +27,12 @@ namespace MusicStory
                 AlbumName.Text = value;
             }
         }
+
         public string Album_id { get => album_id; set { album_id = value; } }
 
         public string Valutazione { get => valutazione; set => valutazione = value; }
         public DateTime Data_Pubblicazione { get => data_Pubblicazione; set => data_Pubblicazione = value; }
 
-        private void cardComponents1_Click(object sender, EventArgs e)
-        {
-           
-        }
 
-        private void CartaAlbum_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ImgAlbum_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

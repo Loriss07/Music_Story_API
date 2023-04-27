@@ -15,10 +15,10 @@ namespace MusicStory
         public CercaArtista()
         {
             Result_List = new List<CartaArtista>();
-            string ConsumerKey = "a406b97e8c4536f215d8610e5aed3e36c0825cca";
-            string ConsumerSecret = "d4558644cdb6e8db2287627751bfa7e9eea577ed";
-            string AccessToken = "1afcbd4add8503ab72afa2068957cfab4df2bbbc";
-            string TokenSecret = "4e42f541ce1a634e26ca8590ccc778d75d281b7e";
+            string ConsumerKey = "a7a0cce7e59cd89b7f3bdb9a55a4f39dd860ef1c";
+            string ConsumerSecret = "4cc900156089ae4480dfc7ed9ed719cb49556fa2";
+            string AccessToken = "b11315d5cb40933ecb5c4cc695c92b03608ddf03";
+            string TokenSecret = "44b16e03e31980d855f03179e2f0f4627377477c";
             Client = new MusicStoryClient("http://api.music-story.com/", ConsumerKey, ConsumerSecret, AccessToken, TokenSecret);
             Bitmap Back = new Bitmap(Properties.Resources.left_arrow, new Size(32, 32));
             Bitmap Forth = new Bitmap(Properties.Resources.right_arrow, new Size(32, 32));
@@ -41,11 +41,11 @@ namespace MusicStory
                     
                     root Risposta = await Client.GetArtist(SearchBar.Text);
                     Mostra(Risposta);
+                    LoadImages();
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show("Errore! Magari non sei connesso ad Internet...\n" + ex.Message);
+                    MessageBox.Show("Errore!...\n" + ex.Message);
                 }
             }
             else
@@ -110,9 +110,9 @@ namespace MusicStory
                 dir.Delete(true);
             }
         }
-        private async void Mostra(root Risposta)
+        private void Mostra(root Risposta)
         {
-
+            
             for (int i = 0; i < Risposta.data.Length; i++)
             {
 
@@ -121,15 +121,6 @@ namespace MusicStory
                 carta.Nome = Risposta.data[i].name;
                 carta.ArtistID = Risposta.data[i].id;
                 Page.Text = Convert.ToString(Risposta.currentPage);
-                int img = await Client.GetImage(carta.ArtistID, "artist");
-                if (img == 1)
-                {
-                    using (FileStream image = File.Open($"./img/artist/img{carta.ArtistID}.png", FileMode.Open, FileAccess.Read, FileShare.Read))
-                    {
-                        carta.ImgArtista.Image = new Bitmap(image);
-                        image.Close();
-                    }
-                }
                 Results.Controls.Add(carta);
             }
             Page.Text = $"Pagina {Risposta.currentPage} di {Risposta.pageCount}; {Risposta.count} risultati trovati";
@@ -139,5 +130,22 @@ namespace MusicStory
             DeleteFiles();
         }
 
+        private async void LoadImages()
+        {
+            foreach (CartaArtista control in Results.Controls)
+            {
+                int img = await Client.GetImage(control.ArtistID, "artist");
+                if (img == 1)
+                {
+                    await Client.DownloadImages(control.ArtistID, "artist");
+                    using (FileStream image = File.Open($"./img/artist/img{control.ArtistID}.png", FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        control.ImgArtista.Image = new Bitmap(image);
+                        image.Close();
+                    }
+                }
+                
+            }
+        }
     }
 }

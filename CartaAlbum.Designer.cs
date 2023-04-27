@@ -40,11 +40,10 @@
             this.ImgAlbum.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ImgAlbum.Location = new System.Drawing.Point(0, 0);
             this.ImgAlbum.Name = "ImgAlbum";
-            this.ImgAlbum.Size = new System.Drawing.Size(128, 179);
+            this.ImgAlbum.Size = new System.Drawing.Size(142, 190);
             this.ImgAlbum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImgAlbum.TabIndex = 0;
             this.ImgAlbum.TabStop = false;
-            this.ImgAlbum.Click += new System.EventHandler(this.ImgAlbum_Click);
             // 
             // Title
             // 
@@ -56,11 +55,10 @@
             this.Title.GradientAngle = 90F;
             this.Title.GradientBottomColor = System.Drawing.Color.Plum;
             this.Title.GradientTopColor = System.Drawing.Color.Transparent;
-            this.Title.Location = new System.Drawing.Point(0, 124);
+            this.Title.Location = new System.Drawing.Point(0, 135);
             this.Title.Name = "Title";
-            this.Title.Size = new System.Drawing.Size(128, 55);
+            this.Title.Size = new System.Drawing.Size(142, 55);
             this.Title.TabIndex = 1;
-            this.Title.Click += new System.EventHandler(this.cardComponents1_Click);
             // 
             // AlbumName
             // 
@@ -80,8 +78,7 @@
             this.Controls.Add(this.Title);
             this.Controls.Add(this.ImgAlbum);
             this.Name = "CartaAlbum";
-            this.Size = new System.Drawing.Size(128, 179);
-            this.Click += new System.EventHandler(this.CartaAlbum_Click);
+            this.Size = new System.Drawing.Size(142, 190);
             ((System.ComponentModel.ISupportInitialize)(this.ImgAlbum)).EndInit();
             this.Title.ResumeLayout(false);
             this.Title.PerformLayout();

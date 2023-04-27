@@ -108,6 +108,14 @@ namespace MusicStory
             int success = -1;
             string subURL = $"/{type}/{ID}/pictures";
             ImgResponse = await GetResponse(subURL);
+            if (ImgResponse.count > 0)
+            {
+                    success = 1;
+            }
+            return success;
+        }
+        public async Task DownloadImages(string ID, string type)
+        {
             if (ImgResponse != null)
             {
                 if (ImgResponse.data.Count() != 0)
@@ -122,12 +130,10 @@ namespace MusicStory
                     using (var file = File.Create($"{path}/img{ID}.png"))
                     using (BinaryWriter image = new BinaryWriter(file))
                     {
-                        image.Write(http.DownloadData(request));
+                        image.Write(await http.DownloadDataAsync(request));
                     }
-                    success = 1;
                 }
             }
-            return success;
         }
         public async Task<root> GetAlbums(string artist_ID)
         {
@@ -151,7 +157,7 @@ namespace MusicStory
         }
         public async Task<string> GetGenre(string artist_ID)
         {
-            string subURL = $"/artist/{artist_ID}/genres"; //Serve a restituire SOLO gli Album (no singoli, no EP...)
+            string subURL = $"/artist/{artist_ID}/genres";
             GenreResponse = await GetResponse(subURL);
 
             return GenreResponse.data[0].name;

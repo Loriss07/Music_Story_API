@@ -9,25 +9,25 @@ namespace MusicStory
 {
     public partial class ArtistInfo : Form
     {
-        private MusicStoryClient client;
+        private MusicStoryClient Client;
         private FileStream ArtistImage;
         private string ID;
         internal ArtistInfo(string Artist_ID, string ArtistName, MusicStoryClient Client)
         {
             InitializeComponent();
-            client = Client;
+            this.Client = Client;
             ID = Artist_ID;
             Artist_Name.Text = ArtistName;
             AlbumInfo.Hide();
-            LoadSocial();
+            //LoadSocial();
             //LoadBiography();
             SetImage();
-            Album();
+            LoadAlbum();
         }
 
         private async void LoadBiography()
         {
-            root bio = await client.GetBiography(ID);
+            root bio = await Client.GetBiography(ID);
 
             for (int i = 0; i < bio.data.Count(); i++)
             {
@@ -46,31 +46,37 @@ namespace MusicStory
             Youtube.Tag = await Social("youtubechannel");
             Twitter.Tag = await Social("twitter");
             Instagram.Tag = await Social("instagram");
-            Genre.Text = await client.GetGenre(ID);
+            Genre.Text = await Client.GetGenre(ID);
         }
         private async Task<string> Social(string social)
         {
             string canale = "";
-            root URL = await client.GetLink(ID, social);
+            root URL = await Client.GetLink(ID, social);
             if (URL.data.Count() > 0)
                 canale = URL.data[0].url;
 
             return canale;
+        }
+        private async void LoadAlbum()
+        {
+            root Risposta = await Client.GetAlbums(ID);
+            Album(Risposta);
+            LoadAlbumImages();
         }
 
         private void SetImage()
         {
             using (ArtistImage = System.IO.File.Open($"./img/artist/img{ID}.png",
                 System.IO.FileMode.Open, System.IO.FileAccess.Read, System.IO.FileShare.ReadWrite))
-            {
-                ArtistPFP.Image = new Bitmap(ArtistImage);
-                ArtistImage.Close();
-            }
+                {
+                    ArtistPFP.Image = new Bitmap(ArtistImage);
+                    ArtistImage.Close();
+                }
 
         }
-        private async void Album()
+        private void Album(root Risposta)
         {
-            root Risposta = await client.GetAlbums(ID);
+            
             if (Risposta != null)
             {
                 for (int i = 0; i < Risposta.data.Count(); i++)
@@ -80,21 +86,6 @@ namespace MusicStory
                     album.Album_id = Risposta.data[i].id;
                     album.Data_Pubblicazione = DateTime.Parse(Risposta.data[i].release_date);
                     album.Click += Album_Click;
-                    album.ImgAlbum.Click += Album_Click;
-                    album.Title.Click += Album_Click;
-                    album.Valutazione = await client.GetReview(album.Album_id);
-                    string recording_ID = await client.GetRelease(album.Album_id);
-                    int img = await client.GetImage(recording_ID, "release");
-
-                    if (img == 1)
-                    {
-                        using (FileStream image = File.Open($"./img/release/img{recording_ID}.png", FileMode.Open, FileAccess.Read, FileShare.Read))
-                        {
-                            album.ImgAlbum.Image = new Bitmap(image);
-                            image.Close();
-                        }
-
-                    }
                     Albums.Controls.Add(album);
 
                 }
@@ -134,14 +125,24 @@ namespace MusicStory
             System.Diagnostics.Process.Start(Instagram.Tag.ToString());
         }
 
-        private void picturePanel_Paint(object sender, PaintEventArgs e)
+        private async void LoadAlbumImages()
         {
+            foreach (CartaAlbum control in Albums.Controls)
+            {
+                string recording_ID = await Client.GetRelease(control.Album_id);
+                int img = await Client.GetImage(recording_ID, "release");
+                if (img == 1)
+                {
+                    await Client.DownloadImages(control.Album_id, "release");
+                    using (FileStream image = File.Open($"./img/release/img{control.Album_id}.png", FileMode.Open, FileAccess.Read, FileShare.Read))
+                    {
+                        control.ImgAlbum.Image = new Bitmap(image);
+                        image.Close();
+                    }
+                }
 
+            }
         }
 
-        private void Albums_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

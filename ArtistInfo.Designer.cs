@@ -30,41 +30,41 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArtistInfo));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.picturePanel = new System.Windows.Forms.Panel();
-            this.Genre = new System.Windows.Forms.Label();
-            this.Artist_Name = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.Back = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.Albums = new System.Windows.Forms.FlowLayoutPanel();
-            this.Voto = new System.Windows.Forms.Label();
-            this.valVoto = new System.Windows.Forms.Label();
-            this.AlbumInfo = new System.Windows.Forms.Panel();
-            this.Titolo = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Data = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.ArtistPFP = new MusicStory.CircleAvatar();
             this.background = new MusicStory.CardComponents();
             this.Biography = new System.Windows.Forms.WebBrowser();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Instagram = new System.Windows.Forms.PictureBox();
             this.Twitter = new System.Windows.Forms.PictureBox();
             this.Youtube = new System.Windows.Forms.PictureBox();
+            this.picturePanel = new System.Windows.Forms.Panel();
+            this.Genre = new System.Windows.Forms.Label();
+            this.Artist_Name = new System.Windows.Forms.Label();
+            this.ArtistPFP = new MusicStory.CircleAvatar();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.Back = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.AlbumInfo = new System.Windows.Forms.Panel();
+            this.Data = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.Titolo = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.valVoto = new System.Windows.Forms.Label();
+            this.Voto = new System.Windows.Forms.Label();
+            this.Albums = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3.SuspendLayout();
-            this.picturePanel.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.AlbumInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).BeginInit();
             this.background.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Instagram)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Twitter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Youtube)).BeginInit();
+            this.picturePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).BeginInit();
+            this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.AlbumInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
@@ -75,199 +75,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(520, 603);
             this.panel3.TabIndex = 2;
-            // 
-            // picturePanel
-            // 
-            this.picturePanel.BackColor = System.Drawing.Color.Transparent;
-            this.picturePanel.Controls.Add(this.Genre);
-            this.picturePanel.Controls.Add(this.Artist_Name);
-            this.picturePanel.Controls.Add(this.ArtistPFP);
-            this.picturePanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.picturePanel.Location = new System.Drawing.Point(0, 0);
-            this.picturePanel.Name = "picturePanel";
-            this.picturePanel.Size = new System.Drawing.Size(537, 282);
-            this.picturePanel.TabIndex = 3;
-            this.picturePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.picturePanel_Paint);
-            // 
-            // Genre
-            // 
-            this.Genre.AutoSize = true;
-            this.Genre.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Genre.ForeColor = System.Drawing.Color.Azure;
-            this.Genre.Location = new System.Drawing.Point(273, 92);
-            this.Genre.Name = "Genre";
-            this.Genre.Size = new System.Drawing.Size(14, 22);
-            this.Genre.TabIndex = 2;
-            this.Genre.Text = " ";
-            // 
-            // Artist_Name
-            // 
-            this.Artist_Name.AutoSize = true;
-            this.Artist_Name.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Artist_Name.ForeColor = System.Drawing.Color.Azure;
-            this.Artist_Name.Location = new System.Drawing.Point(271, 37);
-            this.Artist_Name.Name = "Artist_Name";
-            this.Artist_Name.Size = new System.Drawing.Size(85, 34);
-            this.Artist_Name.TabIndex = 1;
-            this.Artist_Name.Text = "label1";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.Back);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 268);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(537, 53);
-            this.panel4.TabIndex = 5;
-            // 
-            // Back
-            // 
-            this.Back.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Back.FlatAppearance.BorderColor = System.Drawing.Color.LemonChiffon;
-            this.Back.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(160)))));
-            this.Back.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(120)))));
-            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Back.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Back.Image = global::MusicStory.Properties.Resources.left_arrow;
-            this.Back.Location = new System.Drawing.Point(0, 0);
-            this.Back.Name = "Back";
-            this.Back.Size = new System.Drawing.Size(537, 53);
-            this.Back.TabIndex = 3;
-            this.Back.Text = "Indietro";
-            this.Back.UseVisualStyleBackColor = true;
-            this.Back.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 282);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(537, 321);
-            this.panel2.TabIndex = 5;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.AlbumInfo);
-            this.panel5.Controls.Add(this.Albums);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(537, 268);
-            this.panel5.TabIndex = 6;
-            // 
-            // Albums
-            // 
-            this.Albums.AutoScroll = true;
-            this.Albums.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Albums.Location = new System.Drawing.Point(0, 0);
-            this.Albums.Name = "Albums";
-            this.Albums.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.Albums.Size = new System.Drawing.Size(537, 201);
-            this.Albums.TabIndex = 0;
-            this.Albums.Paint += new System.Windows.Forms.PaintEventHandler(this.Albums_Paint);
-            // 
-            // Voto
-            // 
-            this.Voto.AutoSize = true;
-            this.Voto.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Voto.Location = new System.Drawing.Point(9, 40);
-            this.Voto.Name = "Voto";
-            this.Voto.Size = new System.Drawing.Size(116, 24);
-            this.Voto.TabIndex = 0;
-            this.Voto.Text = "Valutazione";
-            // 
-            // valVoto
-            // 
-            this.valVoto.AutoSize = true;
-            this.valVoto.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valVoto.Location = new System.Drawing.Point(131, 40);
-            this.valVoto.Name = "valVoto";
-            this.valVoto.Size = new System.Drawing.Size(15, 24);
-            this.valVoto.TabIndex = 1;
-            this.valVoto.Text = " ";
-            // 
-            // AlbumInfo
-            // 
-            this.AlbumInfo.Controls.Add(this.Data);
-            this.AlbumInfo.Controls.Add(this.label5);
-            this.AlbumInfo.Controls.Add(this.Titolo);
-            this.AlbumInfo.Controls.Add(this.label4);
-            this.AlbumInfo.Controls.Add(this.label1);
-            this.AlbumInfo.Controls.Add(this.valVoto);
-            this.AlbumInfo.Controls.Add(this.Voto);
-            this.AlbumInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AlbumInfo.Location = new System.Drawing.Point(0, 201);
-            this.AlbumInfo.Name = "AlbumInfo";
-            this.AlbumInfo.Size = new System.Drawing.Size(537, 67);
-            this.AlbumInfo.TabIndex = 1;
-            // 
-            // Titolo
-            // 
-            this.Titolo.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Titolo.AutoSize = true;
-            this.Titolo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Titolo.Location = new System.Drawing.Point(77, 6);
-            this.Titolo.Name = "Titolo";
-            this.Titolo.Size = new System.Drawing.Size(15, 24);
-            this.Titolo.TabIndex = 5;
-            this.Titolo.Text = " ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 24);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Titolo";
-            // 
-            // Data
-            // 
-            this.Data.AutoSize = true;
-            this.Data.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Data.Location = new System.Drawing.Point(381, 23);
-            this.Data.Name = "Data";
-            this.Data.Size = new System.Drawing.Size(15, 24);
-            this.Data.TabIndex = 7;
-            this.Data.Text = " ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(210, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(135, 24);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Pubblicazione";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(98, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(15, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = " ";
-            // 
-            // ArtistPFP
-            // 
-            this.ArtistPFP.BorderGradientBottom = System.Drawing.Color.LemonChiffon;
-            this.ArtistPFP.BorderGradientTop = System.Drawing.Color.Plum;
-            this.ArtistPFP.BorderRadius = 40;
-            this.ArtistPFP.BorderSize = 1;
-            this.ArtistPFP.GradientAngle = 120F;
-            this.ArtistPFP.Location = new System.Drawing.Point(0, 0);
-            this.ArtistPFP.Name = "ArtistPFP";
-            this.ArtistPFP.Size = new System.Drawing.Size(265, 265);
-            this.ArtistPFP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ArtistPFP.TabIndex = 0;
-            this.ArtistPFP.TabStop = false;
             // 
             // background
             // 
@@ -339,6 +146,198 @@
             this.Youtube.TabStop = false;
             this.Youtube.Click += new System.EventHandler(this.Youtube_Click);
             // 
+            // picturePanel
+            // 
+            this.picturePanel.BackColor = System.Drawing.Color.Transparent;
+            this.picturePanel.Controls.Add(this.Genre);
+            this.picturePanel.Controls.Add(this.Artist_Name);
+            this.picturePanel.Controls.Add(this.ArtistPFP);
+            this.picturePanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.picturePanel.Location = new System.Drawing.Point(0, 0);
+            this.picturePanel.Name = "picturePanel";
+            this.picturePanel.Size = new System.Drawing.Size(537, 282);
+            this.picturePanel.TabIndex = 3;
+            // 
+            // Genre
+            // 
+            this.Genre.AutoSize = true;
+            this.Genre.Font = new System.Drawing.Font("Bahnschrift Condensed", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Genre.ForeColor = System.Drawing.Color.Azure;
+            this.Genre.Location = new System.Drawing.Point(273, 92);
+            this.Genre.Name = "Genre";
+            this.Genre.Size = new System.Drawing.Size(14, 22);
+            this.Genre.TabIndex = 2;
+            this.Genre.Text = " ";
+            // 
+            // Artist_Name
+            // 
+            this.Artist_Name.AutoSize = true;
+            this.Artist_Name.Font = new System.Drawing.Font("Bahnschrift", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Artist_Name.ForeColor = System.Drawing.Color.Azure;
+            this.Artist_Name.Location = new System.Drawing.Point(271, 37);
+            this.Artist_Name.Name = "Artist_Name";
+            this.Artist_Name.Size = new System.Drawing.Size(85, 34);
+            this.Artist_Name.TabIndex = 1;
+            this.Artist_Name.Text = "label1";
+            // 
+            // ArtistPFP
+            // 
+            this.ArtistPFP.BorderGradientBottom = System.Drawing.Color.LemonChiffon;
+            this.ArtistPFP.BorderGradientTop = System.Drawing.Color.Plum;
+            this.ArtistPFP.BorderRadius = 40;
+            this.ArtistPFP.BorderSize = 1;
+            this.ArtistPFP.GradientAngle = 120F;
+            this.ArtistPFP.Location = new System.Drawing.Point(0, 0);
+            this.ArtistPFP.Name = "ArtistPFP";
+            this.ArtistPFP.Size = new System.Drawing.Size(265, 265);
+            this.ArtistPFP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ArtistPFP.TabIndex = 0;
+            this.ArtistPFP.TabStop = false;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.Back);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 268);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(537, 53);
+            this.panel4.TabIndex = 5;
+            // 
+            // Back
+            // 
+            this.Back.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Back.FlatAppearance.BorderColor = System.Drawing.Color.LemonChiffon;
+            this.Back.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(80)))), ((int)(((byte)(160)))));
+            this.Back.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(120)))));
+            this.Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Back.Font = new System.Drawing.Font("Bahnschrift SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Back.Image = global::MusicStory.Properties.Resources.left_arrow;
+            this.Back.Location = new System.Drawing.Point(0, 0);
+            this.Back.Name = "Back";
+            this.Back.Size = new System.Drawing.Size(537, 53);
+            this.Back.TabIndex = 3;
+            this.Back.Text = "Indietro";
+            this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 282);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(537, 321);
+            this.panel2.TabIndex = 5;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.AlbumInfo);
+            this.panel5.Controls.Add(this.Albums);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(537, 268);
+            this.panel5.TabIndex = 6;
+            // 
+            // AlbumInfo
+            // 
+            this.AlbumInfo.Controls.Add(this.Data);
+            this.AlbumInfo.Controls.Add(this.label5);
+            this.AlbumInfo.Controls.Add(this.Titolo);
+            this.AlbumInfo.Controls.Add(this.label4);
+            this.AlbumInfo.Controls.Add(this.label1);
+            this.AlbumInfo.Controls.Add(this.valVoto);
+            this.AlbumInfo.Controls.Add(this.Voto);
+            this.AlbumInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AlbumInfo.Location = new System.Drawing.Point(0, 201);
+            this.AlbumInfo.Name = "AlbumInfo";
+            this.AlbumInfo.Size = new System.Drawing.Size(537, 67);
+            this.AlbumInfo.TabIndex = 1;
+            // 
+            // Data
+            // 
+            this.Data.AutoSize = true;
+            this.Data.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Data.Location = new System.Drawing.Point(381, 23);
+            this.Data.Name = "Data";
+            this.Data.Size = new System.Drawing.Size(15, 24);
+            this.Data.TabIndex = 7;
+            this.Data.Text = " ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(210, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 24);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Pubblicazione";
+            // 
+            // Titolo
+            // 
+            this.Titolo.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Titolo.AutoSize = true;
+            this.Titolo.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Titolo.Location = new System.Drawing.Point(77, 6);
+            this.Titolo.Name = "Titolo";
+            this.Titolo.Size = new System.Drawing.Size(15, 24);
+            this.Titolo.TabIndex = 5;
+            this.Titolo.Text = " ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(9, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 24);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Titolo";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(77, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(15, 24);
+            this.label1.TabIndex = 3;
+            this.label1.Text = " ";
+            // 
+            // valVoto
+            // 
+            this.valVoto.AutoSize = true;
+            this.valVoto.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valVoto.Location = new System.Drawing.Point(131, 40);
+            this.valVoto.Name = "valVoto";
+            this.valVoto.Size = new System.Drawing.Size(15, 24);
+            this.valVoto.TabIndex = 1;
+            this.valVoto.Text = " ";
+            // 
+            // Voto
+            // 
+            this.Voto.AutoSize = true;
+            this.Voto.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Voto.Location = new System.Drawing.Point(9, 40);
+            this.Voto.Name = "Voto";
+            this.Voto.Size = new System.Drawing.Size(116, 24);
+            this.Voto.TabIndex = 0;
+            this.Voto.Text = "Valutazione";
+            // 
+            // Albums
+            // 
+            this.Albums.AutoScroll = true;
+            this.Albums.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Albums.Location = new System.Drawing.Point(0, 0);
+            this.Albums.Name = "Albums";
+            this.Albums.Padding = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.Albums.Size = new System.Drawing.Size(537, 201);
+            this.Albums.TabIndex = 0;
+            // 
             // ArtistInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -355,19 +354,19 @@
             this.ShowIcon = false;
             this.Text = "ArtistInfo";
             this.panel3.ResumeLayout(false);
-            this.picturePanel.ResumeLayout(false);
-            this.picturePanel.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.AlbumInfo.ResumeLayout(false);
-            this.AlbumInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).EndInit();
             this.background.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Instagram)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Twitter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Youtube)).EndInit();
+            this.picturePanel.ResumeLayout(false);
+            this.picturePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ArtistPFP)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.AlbumInfo.ResumeLayout(false);
+            this.AlbumInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
